@@ -359,6 +359,7 @@ details p{color:var(--grey);padding:0 0 22px;max-width:70ch}
 .story li::before{content:"";position:absolute;left:0;top:24px;width:12px;height:2px;background:var(--grad)}
 .story .big{font-family:var(--font-display);font-size:clamp(1.5rem,2.6vw,2.3rem);font-weight:600;letter-spacing:-.03em;line-height:1.15;color:var(--ink);margin:1.6em 0 .8em}
 .story-side{position:sticky;top:110px}
+@media (max-width:900px){.story-side{position:static;margin-bottom:40px}.story-side .stat{display:inline-block;width:48%;vertical-align:top;margin:0 0 20px}}
 .story-side .stat{margin-bottom:28px}
 
 /* SmileOX board mockup */

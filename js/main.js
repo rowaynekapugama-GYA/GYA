@@ -28,20 +28,34 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Lazy-load live site previews only when near the viewport (keeps LCP clean)
+  // Live site previews: mount only while near the viewport, unmount when scrolled past,
+  // and cap how many run at once so phones don't run out of memory.
   const screens=document.querySelectorAll('.screen[data-src]');
   if(screens.length){
-    const sio=new IntersectionObserver(es=>es.forEach(e=>{
-      if(!e.isIntersecting)return;
-      const s=e.target;
+    const isMobile=matchMedia('(max-width:820px)').matches||navigator.hardwareConcurrency<=4;
+    const MAX=isMobile?1:2;
+    const active=new Set();
+    const mount=s=>{
+      if(s.querySelector('iframe')||active.size>=MAX)return;
       const f=document.createElement('iframe');
-      f.src=s.dataset.src;f.loading='lazy';f.title=s.dataset.title||'Live website preview';
+      f.src=s.dataset.src;f.title=s.dataset.title||'Live website preview';
       f.setAttribute('tabindex','-1');f.setAttribute('aria-hidden','true');
-      f.setAttribute('sandbox','allow-scripts allow-same-origin');
+      f.setAttribute('loading','lazy');f.setAttribute('allow','autoplay');
       f.addEventListener('load',()=>s.classList.add('loaded'));
-      s.prepend(f);sio.unobserve(s);
-    }),{rootMargin:'400px 0px'});
+      s.prepend(f);active.add(s);
+    };
+    const unmount=s=>{
+      const f=s.querySelector('iframe');if(!f)return;
+      f.src='about:blank';f.remove();s.classList.remove('loaded');active.delete(s);
+    };
+    const sio=new IntersectionObserver(es=>{
+      es.forEach(e=>{e.target.dataset.vis=e.isIntersecting?'1':''});
+      screens.forEach(s=>{if(!s.dataset.vis)unmount(s)});
+      screens.forEach(s=>{if(s.dataset.vis)mount(s)});
+    },{rootMargin:isMobile?'0px 0px 120px 0px':'200px 0px'});
     screens.forEach(s=>sio.observe(s));
+    // If the page gets hidden (tab switch) drop everything to free memory
+    addEventListener('visibilitychange',()=>{if(document.hidden)screens.forEach(unmount)});
   }
 
   // Contact modal
