@@ -194,7 +194,7 @@ BOARD=f"""
 
 ORG={"@context":"https://schema.org","@type":"ProfessionalService","name":"Generate Your Audience","alternateName":"GYA",
  "url":SITE,"logo":SITE+"/assets/gya-logo.png","image":SITE+"/assets/team.jpg","foundingDate":"2015","telephone":PHONE,
- "founder":[{"@type":"Person","name":"Rowayne"},{"@type":"Person","name":"Brett"}],
+ "founder":[{"@type":"Person","name":"Rowayne","jobTitle":"Founder, Strategy"},{"@type":"Person","name":"Brett","jobTitle":"Co-founder, Client Success"}],"numberOfEmployees":{"@type":"QuantitativeValue","minValue":40},
  "description":"Digital marketing and lead generation agency founded in 2015. Dental marketing for 100+ clinics, plus websites, Google Ads, local SEO, social media and the SmileOX lead platform for businesses across Australia.",
  "areaServed":"AU","address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"},
  "knowsAbout":["Dental marketing","Dental SEO","Dental website design","Lead generation","Google Ads","Local SEO","AI marketing","Social media marketing"]}

@@ -405,25 +405,34 @@ pages["work.html"]=dict(
 # ================= ABOUT =================
 pages["about.html"]=dict(
  title="About GYA | Rowayne and Brett, Founders of Generate Your Audience",
- desc="Meet Rowayne and Brett, co-founders of Generate Your Audience. Two ex-Myer managers who started a marketing agency at night in 2015 and now manage 100+ dental clinics plus 30 other industries.",
+ desc="Meet Rowayne and Brett, the founders of Generate Your Audience, and the 40+ team behind them. Two ex-Myer managers who started a marketing agency at night in 2015 and now manage 100+ dental clinics plus 30 other industries.",
  schema={"@context":"https://schema.org","@type":"AboutPage","mainEntity":ORG},
  body=f"""
 <section class="page-hero"><div class="wrap">
   <p class="eyebrow">About</p>
-  <h1 style="margin-top:22px">Two people. A lot of clinics. A very full calendar.</h1>
+  <h1 style="margin-top:22px">Two founders, 40+ team members, and a very full calendar.</h1>
   <p class="lead">We started GYA in 2015 while still running stores for Myer. Brett had NSW and ACT, over a billion dollars of retail. Rowayne had multiple stores across NSW. We brought that discipline to marketing and never really switched it off.</p>
 </div></section>
 
 <section class="section tight"><div class="wrap">
   <div class="team">
     <div class="person reveal">
-      <div class="pic"><img src="assets/rowayne.jpg" alt="Rowayne, co-founder of Generate Your Audience" width="600" height="750" loading="lazy"></div>
-      <h3>Rowayne</h3><p class="role">Co-founder</p>
+      <div class="pic"><img src="assets/rowayne.jpg" alt="Rowayne, founder of Generate Your Audience" width="600" height="750" loading="lazy"></div>
+      <h3>Rowayne</h3><p class="role">Founder · Strategy</p>
     </div>
     <div class="person brett reveal">
       <div class="pic"><img src="assets/brett.jpg" alt="Brett, co-founder of Generate Your Audience" width="600" height="750" loading="lazy"></div>
       <h3>Brett</h3><p class="role">Co-founder · Client success</p>
     </div>
+  </div>
+  <div class="split" style="margin-top:clamp(48px,7vw,96px)">
+    <div class="reveal"><p class="eyebrow">The team</p><h2 style="margin-top:18px">Over 40 of us, and they become part of your family too.</h2></div>
+    <div class="reveal"><p class="lead">Behind Rowayne and Brett there's a team of more than 40: ads specialists, SEO, designers, developers, video, copywriters, and the account managers who'll be on your fortnightly call. You're not handed off to a junior after you sign. The people who build your plan are the people who run it, and most of our clients end up knowing them by name.</p>
+    <div class="grid g3" style="margin-top:36px">
+      <div class="stat"><strong>40+</strong><span>team members across GYA</span></div>
+      <div class="stat"><strong>2</strong><span>founders who still pick up the phone</span></div>
+      <div class="stat"><strong>1</strong><span>account manager who knows your clinic</span></div>
+    </div></div>
   </div>
 </div></section>
 
