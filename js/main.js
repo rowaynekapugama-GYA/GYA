@@ -44,13 +44,23 @@
     screens.forEach(s=>sio.observe(s));
   }
 
-  // Contact form (front-end only; wire to your endpoint)
-  const form=document.querySelector('form[data-contact]');
-  if(form){
+  // Contact modal
+  const modal=document.getElementById('contact-modal');
+  if(modal){
+    const open=()=>{modal.classList.add('open');document.body.style.overflow='hidden';modal.querySelector('input')?.focus();};
+    const close=()=>{modal.classList.remove('open');document.body.style.overflow='';};
+    document.querySelectorAll('[data-open-contact]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();open();}));
+    modal.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',close));
+    addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+    if(location.hash==='#talk')open();
+  }
+
+  // Contact forms (front-end only; wire to your endpoint)
+  document.querySelectorAll('form[data-contact]').forEach(form=>{
     form.addEventListener('submit',e=>{
       e.preventDefault();
       const btn=form.querySelector('button[type=submit]');
-      btn.textContent='Sent — we\'ll be in touch';btn.disabled=true;
+      btn.textContent='Sent. Brett will call you.';btn.disabled=true;
     });
-  }
+  });
 })();
