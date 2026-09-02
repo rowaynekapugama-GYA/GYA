@@ -1,6 +1,6 @@
 import os, json, re
 SITE="https://www.generateyouraudience.com"
-PHONE="+61400000000"   # TODO: Brett's number
+PHONE="1300889840"
 OUT=os.path.dirname(os.path.abspath(__file__))
 
 NAV=[("index.html","Home"),("dental-marketing.html","Dental Marketing"),("dental-websites.html","Dental Websites"),
@@ -52,7 +52,7 @@ def head(title,desc,slug,schema=None):
       {''.join(f'<a href="{h}">{l}</a>' for h,l in NAV[1:])}
     </nav>
     <div class="nav-cta">
-      <a class="btn" href="tel:{PHONE}"><span class="dot"></span>Speak to Brett</a>
+      <a class="btn" href="tel:{PHONE}"><span class="dot"></span>Contact us</a>
       <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -60,7 +60,7 @@ def head(title,desc,slug,schema=None):
 <div class="mobile-menu" id="mobile-menu">
   {''.join(f'<a class="item" href="{h}">{l}<small>0{i+1}</small></a>' for i,(h,l) in enumerate(NAV))}
   <div class="mm-foot">
-    <a class="btn" href="tel:{PHONE}"><span class="dot"></span>Speak to Brett</a>
+    <a class="btn" href="tel:{PHONE}"><span class="dot"></span>Contact us</a>
     <a class="btn ghost" href="#" data-open-contact>Send us a note</a>
   </div>
 </div>
@@ -84,7 +84,7 @@ def form(idp="c"):
   </div>
   <div class="group">What do you need? {pills(idp)}</div>
   <label>Anything else<textarea name="message" placeholder="Where you are, what you want more of, what's not working right now"></textarea></label>
-  <button class="btn" type="submit"><span class="dot"></span>Send it to Brett</button>
+  <button class="btn" type="submit"><span class="dot"></span>Send it through</button>
 </form>"""
 
 MODAL=f"""
@@ -93,7 +93,7 @@ MODAL=f"""
   <div class="panel">
     <button class="close" aria-label="Close" data-close>×</button>
     <h2 id="cm-title">Tell us what's going on.</h2>
-    <p class="muted">Or skip the form and <a class="link" href="tel:{PHONE}">call Brett</a>. He picks up.</p>
+    <p class="muted">Or skip the form and call us on <a class="link" href="tel:{PHONE}">1300 889 840</a>.</p>
     {form("m")}
   </div>
 </div>"""
@@ -117,8 +117,8 @@ FOOT=f"""
         <li><a href="work.html">Recent work</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Talk to Brett</h4><ul>
-        <li><a href="tel:{PHONE}">Call Brett</a></li>
+      <div><h4>Talk to us</h4><ul>
+        <li><a href="tel:{PHONE}">1300 889 840</a></li>
         <li><a href="mailto:hello@generateyouraudience.com">hello@generateyouraudience.com</a></li>
         <li><a href="#" data-open-contact>Send a note</a></li></ul></div>
     </div>
@@ -134,13 +134,13 @@ FOOT=f"""
 </html>
 """
 
-def cta(title="Empty books give us anxiety. Genuinely.",sub="So if yours are looking a bit light, call Brett. Twenty minutes, no pitch, just a look at what's going on and what we'd do about it."):
+def cta(title="Empty books give us anxiety. Genuinely.",sub="So if yours are looking a bit light, call us. Twenty minutes, no pitch, just a look at what's going on and what we'd do about it."):
     return f"""
 <section class="section tight">
   <div class="wrap">
     <div class="cta-band dark reveal">
       <div><h2>{title}</h2><p class="lead" style="margin-top:16px">{sub}</p></div>
-      <div class="actions"><a class="btn light" href="tel:{PHONE}"><span class="dot"></span>Speak to Brett</a><a class="btn ghost-light" href="#" data-open-contact>Send a note instead</a></div>
+      <div class="actions"><a class="btn light" href="tel:{PHONE}"><span class="dot"></span>Contact us</a><a class="btn ghost-light" href="#" data-open-contact>Send a note instead</a></div>
     </div>
   </div>
 </section>"""

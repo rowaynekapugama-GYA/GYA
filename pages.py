@@ -10,8 +10,8 @@ pages["index.html"]=dict(
     <h1 style="margin-top:24px">We're not going to <span class="strike">tell you why you should hire us.</span></h1>
     <div class="hero-foot">
       <div>
-        <p class="lead">Everyone does that. Instead here's our story, exactly what happens in your first week, and the sites we built this quarter playing live. If you get to the bottom and still want to talk, call Brett.</p>
-        <div class="hero-actions"><a class="btn light" href="tel:{PHONE}"><span class="dot"></span>Speak to Brett</a><a class="btn ghost-light" href="#story">Read the story</a></div>
+        <p class="lead">Everyone does that. Instead here's our story, exactly what happens in your first week, and the sites we built this quarter playing live. If you get to the bottom and still want to talk, give us a call.</p>
+        <div class="hero-actions"><a class="btn light" href="tel:{PHONE}"><span class="dot"></span>Contact us</a><a class="btn ghost-light" href="#story">Read the story</a></div>
       </div>
       <div class="hero-meta">
         <div><strong>100+</strong><span>dental clinics we manage</span></div>
@@ -98,7 +98,7 @@ pages["index.html"]=dict(
           <li><div><strong>Build a lead generation machine</strong><p>SmileOX nurtures and triages every lead, then your front desk takes over with people who are ready to book.</p></div></li>
         </ol>
         <div class="story"><p class="big" style="margin-top:40px">There are two ways someone finds you online. They search on Google, or they see you on social media. Fix those two and you're halfway there. The rest is a funnel that makes sure nothing slips through the cracks.</p></div>
-        <p class="lead">If you read all of this, it's probably worth talking to us about it. <a class="link" href="tel:{PHONE}">Call Brett</a>.</p>
+        <p class="lead">If you read all of this, it's probably worth talking to us about it. <a class="link" href="tel:{PHONE}">1300 889 840</a>.</p>
       </div>
     </div>
   </div>
@@ -153,7 +153,7 @@ pages["dental-marketing.html"]=dict(
   <p class="eyebrow">Dental marketing</p>
   <h1 style="margin-top:22px">Marketing for dentists that's measured in <span class="u">booked patients</span>, not impressions.</h1>
   <p class="lead">Google Ads, local SEO, Meta and SmileOX, all wired together so no enquiry goes cold. We do this for more than 100 clinics and we've been doing it for seven years.</p>
-  <div class="hero-actions"><a class="btn" href="tel:{PHONE}"><span class="dot"></span>Speak to Brett</a><a class="btn ghost" href="#services">What's included</a></div>
+  <div class="hero-actions"><a class="btn" href="tel:{PHONE}"><span class="dot"></span>Contact us</a><a class="btn ghost" href="#services">What's included</a></div>
 </div></section>
 
 <section class="section tight" id="services"><div class="wrap">
@@ -209,7 +209,7 @@ pages["dental-websites.html"]=dict(
   <p class="eyebrow">Dental web design and development</p>
   <h1 style="margin-top:22px">Dental websites that load fast, look expensive and <span class="u">book patients</span>.</h1>
   <p class="lead">Video banners, online booking, treatment pages built for search, and Core Web Vitals that Google actually rewards. Every site below is live. Watch them.</p>
-  <div class="hero-actions"><a class="btn" href="tel:{PHONE}"><span class="dot"></span>Speak to Brett</a><a class="btn ghost" href="#live">See live sites</a></div>
+  <div class="hero-actions"><a class="btn" href="tel:{PHONE}"><span class="dot"></span>Contact us</a><a class="btn ghost" href="#live">See live sites</a></div>
 </div></section>
 
 <section class="section dark" id="live"><div class="wrap">
@@ -241,7 +241,7 @@ pages["dental-websites.html"]=dict(
     <div class="card reveal"><span class="num">03</span><h3>Launch and grow</h3><p>Migration with zero SEO loss, analytics and SmileOX wired in, then ongoing care as part of your marketing.</p></div>
   </div>
 </div></section>
-{cta("Your next website, live in weeks.","Tell Brett the clinic and the suburb. You'll get a plan and an honest timeline.")}
+{cta("Your next website, live in weeks.","Tell us the clinic and the suburb. You'll get a plan and an honest timeline.")}
 """)
 
 # ================= SMILEOX =================
@@ -254,7 +254,7 @@ pages["smileox.html"]=dict(
   <p class="eyebrow">SmileOX · built by GYA</p>
   <h1 style="margin-top:22px">The lead comes in at 9:02. By 9:06 it's <span class="accent">booked</span>.</h1>
   <p class="lead">We built SmileOX because our ads were generating leads faster than front desks could answer them. It replies instantly, nurtures automatically and scores every lead by treatment value. Weekends and after hours included.</p>
-  <div class="hero-actions" style="margin-bottom:clamp(48px,7vw,96px)"><a class="btn light" href="tel:{PHONE}"><span class="dot"></span>Speak to Brett</a></div>
+  <div class="hero-actions" style="margin-bottom:clamp(48px,7vw,96px)"><a class="btn light" href="tel:{PHONE}"><span class="dot"></span>Contact us</a></div>
   <div class="flow reveal">
     <div><span class="k"><b>01</b> Capture</span><h3>Every channel, one inbox</h3><p>Website forms, Google Ads calls, missed calls, Meta lead forms, Instagram DMs, email. Nothing sits in a spam folder at 6pm on a Friday.</p></div>
     <div><span class="k"><b>02</b> Respond</span><h3>Reply in under a minute</h3><p>Personalised SMS and email on the patient's channel. Missed-call text-back. Consult options and booking links, automatically.</p></div>
@@ -309,7 +309,7 @@ pages["marketing.html"]=dict(
   <p class="eyebrow">Marketing for all industries</p>
   <h1 style="margin-top:22px">Dental is what we're known for. It's not all we do.</h1>
   <p class="lead">Before the first dentist there were cafes, retailers, tradies, gyms and professional services. We still look after about 30 industries with the same retail discipline: targets, a fortnightly call, and no excuses.</p>
-  <div class="hero-actions"><a class="btn" href="tel:{PHONE}"><span class="dot"></span>Speak to Brett</a><a class="btn ghost" href="#services">Everything we do</a></div>
+  <div class="hero-actions"><a class="btn" href="tel:{PHONE}"><span class="dot"></span>Contact us</a><a class="btn ghost" href="#services">Everything we do</a></div>
 </div></section>
 
 <section class="section tight" id="services"><div class="wrap">
@@ -335,7 +335,7 @@ pages["marketing.html"]=dict(
     </div>
   </div>
 </div></section>
-{cta("Not a dentist? Still call Brett.","Tell him what you do and what's not working. He'll tell you straight whether we're the right fit.")}
+{cta("Not a dentist? Still call us.","Tell us what you do and what's not working. We'll tell you straight whether we're the right fit.")}
 """)
 
 # ================= AI MARKETING =================
@@ -384,7 +384,7 @@ pages["ai-marketing.html"]=dict(
     <div class="reveal"><p class="lead">The businesses whose data is clean enough for a machine to recommend, whose follow-up is fast enough to beat the competitor down the road, and whose agency treats AI as a tool rather than a headline. We plan to be that agency, and to keep telling you exactly what's working and what isn't.</p></div>
   </div>
 </div></section>
-{cta("Want to know how AI describes your business today?","Brett will run the check on your visibility and your lead response time and walk you through both.")}
+{cta("Want to know how AI describes your business today?","We'll run the check on your visibility and your lead response time and walk you through both.")}
 """)
 
 # ================= WORK =================
@@ -399,7 +399,7 @@ pages["work.html"]=dict(
   <p class="lead">Every site here is streaming in from the web right now, video banners playing. Hover to browse. Open one in a new tab and run it through PageSpeed yourself.</p>
 </div></section>
 <section class="section dark"><div class="wrap">{work_grid()}</div></section>
-{cta("Want a site like these?","Tell Brett about your business. You'll get a plan, a timeline and a couple of directions.")}
+{cta("Want a site like these?","Tell us about your business. You'll get a plan, a timeline and a couple of directions.")}
 """)
 
 # ================= ABOUT =================
@@ -454,27 +454,27 @@ pages["about.html"]=dict(
     <p class="lead reveal">About seven years ago Dr Ram took a punt on two retail guys with a night-time agency. His practice grew, people noticed, and the referrals haven't really stopped. Over 100 clinics later we still run it the same way: look at the numbers, find the problem, fix it, call the client.</p>
   </div>
 </div></section>
-{cta("Say hello.","Brett picks up the phone. Twenty minutes, no deck, just a look at your numbers and what we'd do first.")}
+{cta("Say hello.","We pick up the phone. Twenty minutes, no deck, just a look at your numbers and what we'd do first.")}
 """)
 
 # ================= CONTACT =================
 pages["contact.html"]=dict(
- title="Contact GYA | Speak to Brett",
- desc="Call Brett or send a note. Tell us what you need and what's not working. We'll come back within one business day.",
+ title="Contact GYA | Call 1300 889 840",
+ desc="Call us on 1300 889 840 or send a note. Tell us what you need and what's not working. We'll come back within one business day.",
  schema={"@context":"https://schema.org","@type":"ContactPage","mainEntity":ORG},
  body=f"""
 <section class="page-hero"><div class="wrap">
   <p class="eyebrow">Contact</p>
-  <h1 style="margin-top:22px">Just call Brett.</h1>
-  <p class="lead">He picks up. If it's late or you'd rather type, send a note below and he'll call you back within one business day.</p>
-  <div class="hero-actions"><a class="btn" href="tel:{PHONE}"><span class="dot"></span>Speak to Brett</a><a class="btn ghost" href="mailto:hello@generateyouraudience.com">Email instead</a></div>
+  <h1 style="margin-top:22px">Just call us. 1300 889 840.</h1>
+  <p class="lead">We pick up. If it's late or you'd rather type, send a note below and we'll call you back within one business day.</p>
+  <div class="hero-actions"><a class="btn" href="tel:{PHONE}"><span class="dot"></span>Contact us</a><a class="btn ghost" href="mailto:hello@generateyouraudience.com">Email instead</a></div>
 </div></section>
 <section class="section tight"><div class="wrap">
   <div class="split">
     <div class="sticky reveal">
       <h3>What happens next</h3>
       <ul class="list" style="margin-top:16px">
-        <li><strong>1 day</strong><p>Brett calls you back.</p></li>
+        <li><strong>1 day</strong><p>We call you back.</p></li>
         <li><strong>20 min</strong><p>A chat about your business, your area, your competitors.</p></li>
         <li><strong>A plan</strong><p>Your first week, in writing.</p></li>
       </ul>

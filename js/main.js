@@ -74,7 +74,7 @@
     form.addEventListener('submit',e=>{
       e.preventDefault();
       const btn=form.querySelector('button[type=submit]');
-      btn.textContent='Sent. Brett will call you.';btn.disabled=true;
+      btn.textContent='Sent. We will call you.';btn.disabled=true;
     });
   });
 })();
