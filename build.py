@@ -68,7 +68,7 @@ def head(title,desc,slug,schema=None):
 """
 
 def pills(name="need"):
-    opts=["Fill my books","A new website","SmileOX on my leads","Google Ads","Local SEO","Social media","Not sure yet"]
+    opts=["Fill my books","A new website","SmileOX on my leads","Google Ads","Local SEO","Social media","Branding or design","Video","Not sure yet"]
     return '<div class="pills" role="group" aria-label="What do you need">'+''.join(
         f'<input type="checkbox" id="{name}-{i}" name="{name}" value="{o}"><label for="{name}-{i}">{o}</label>' for i,o in enumerate(opts))+'</div>'
 
@@ -83,7 +83,7 @@ def form(idp="c"):
     <label>Mobile<input type="tel" name="phone" autocomplete="tel" required></label>
   </div>
   <div class="group">What do you need? {pills(idp)}</div>
-  <label>Anything else<textarea name="message" placeholder="Where you are, what you want more of, what's not working right now"></textarea></label>
+  <label>What's not working right now?<textarea name="message" placeholder="Where you are, what you want more of, what's going wrong"></textarea></label>
   <button class="btn" type="submit"><span class="dot"></span>Send it through</button>
 </form>"""
 
@@ -134,38 +134,98 @@ FOOT=f"""
 </html>
 """
 
-def cta(title="Empty books give us anxiety. Genuinely.",sub="So if yours are looking a bit light, call us. Twenty minutes, no pitch, just a look at what's going on and what we'd do about it."):
+def cta(title="Empty books give us anxiety. Genuinely.",sub="So if yours are looking a bit light, call us. Twenty minutes, no pitch, just a look at what's going on and what we'd do about it.",extra=""):
+    ex=f'<p class="muted" style="margin-top:14px">{extra}</p>' if extra else ""
     return f"""
 <section class="section tight">
   <div class="wrap">
-    <div class="cta-band dark reveal">
-      <div><h2>{title}</h2><p class="lead" style="margin-top:16px">{sub}</p></div>
-      <div class="actions"><a class="btn light" href="tel:{PHONE}"><span class="dot"></span>Contact us</a><a class="btn ghost-light" href="#" data-open-contact>Send a note instead</a></div>
+    <div class="cta-band reveal">
+      <div><h2>{title}</h2><p class="lead" style="margin-top:16px">{sub}</p>{ex}</div>
+      <div class="actions"><a class="btn" href="tel:{PHONE}"><span class="dot"></span>Call 1300 889 840</a><a class="btn ghost" href="#" data-open-contact>Send a note instead</a></div>
     </div>
   </div>
 </section>"""
 
+def faq(items):
+    html="".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q,a in items)
+    schema={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in items]}
+    return html,schema
+
+from urllib.parse import quote
 SITES=[
- ("https://lava-street-dental.vercel.app","lava-street-dental.vercel.app","Lava Street Dental","Brand · Website · Video banner"),
- ("https://horizon.gya.net.au","horizon.gya.net.au","Horizon Dental","Website · Booking flow · Video banner"),
- ("https://www.artarmondentists.com","artarmondentists.com","Artarmon Dentists","Website · Local SEO · Video banner"),
- ("https://www.greystreetdentist.com.au","greystreetdentist.com.au","Grey Street Dentist","Website · Google Ads landing · Video banner"),
+ dict(slug="footscray",url="https://www.footscraydentalstudio.com.au",host="footscraydentalstudio.com.au",name="Footscray Dental Studio",place="Footscray VIC",tags="Brand · Website · Google Ads",
+  short="New owners, new name, same chairs. The site had to tell Footscray what changed without losing the patients who'd been coming for years.",
+  long=["An established practice on Barkly St, taken over by new owners and renamed. That's a tricky one. Half the job is winning new patients, and the other half is making sure the old ones don't assume the place shut down.",
+        "So the old name is mentioned plainly, the new patient offer sits on the homepage with a price on it, and every treatment they do has its own page, from check-ups through to All-on-X. The Google Ads went live pointing at those same pages, so the brand, the site and the ads all turned up together."]),
+ dict(slug="my-dentist",url="https://dentist-alderley-newmarket.com.au",host="dentist-alderley-newmarket.com.au",name="My Dentist",place="Alderley QLD",tags="Website · Positioning · Suburb pages",
+  short="A holistic practice with a strong point of view. The site says it in five seconds and still works for a family that just wants a check-up.",
+  long=["This practice knows exactly what it is: whole-body, low-tox dentistry. That's a great position and an easy one to overdo, because the same site also has to work for a parent booking two kids in for a clean.",
+        "The hero leads with the idea, the exam packages sit right under it with prices on them, and each suburb they draw patients from gets its own page. Someone who's never heard of holistic dentistry gets it straight away, and someone who went looking for it knows they've found the right place."]),
+ dict(slug="tooth-n-care",url="https://toothncare.vercel.app",host="toothncare.vercel.app",name="Tooth n Care",place="East Maitland NSW",tags="Website · Online booking · Treatment pages",
+  short="A family practice in the Hunter, open Saturdays. Built for the parent booking from the car park at 5pm.",
+  long=["A family practice on Lawes Street in East Maitland. Lots of kids, lots of first visits, and lots of people who haven't seen a dentist in a while and aren't thrilled about it.",
+        "So Book Online is on every screen, the new patient price is on the homepage instead of hidden behind a phone call, and there's a page called Feeling Nervous? Start Here, which does exactly what it says. Every treatment has its own page, and the whole thing holds up on a phone with two bars."]),
+ dict(slug="horizon",url="https://horizon.gya.net.au",host="horizon.gya.net.au",name="Horizon Dental",place="Sydney CBD",tags="Website · Booking flow · Video banner",
+  short="Every page has a short path to the booking, not a trip back to a contact form.",
+  mid="Built around one action, with a short route to the booking from wherever a patient lands.",
+  long=["Built around one action. Wherever a patient lands, the path to a booking is short and obvious, and treatment pages carry their own booking prompts rather than sending someone back to a contact page to start again.",
+        "Most sites make you decide twice. Once to want the thing, and again to work out how to get it. The second decision is where they lose people, so we took it out."]),
+ dict(slug="newgen",url="https://newgen-site-sep24.vercel.app",host="newgen-site-sep24.vercel.app",name="New'Gen Dental Surgery",place="Seymour VIC",tags="Website · Local SEO",
+  short="A regional practice where the map listing is most of the game. Built so Google knows exactly what they do and which towns they look after.",
+  long=["Seymour is regional Victoria, and in a town that size the map listing does most of the heavy lifting. People aren't comparing twelve practices. They're checking who's close, who's open and whether anyone picks up.",
+        "The site was built to back the listing up: details that match everywhere the practice appears, a page for each treatment, and the phone number where a thumb can find it. Nothing fancy for the sake of it, just a site that makes the practice easy to choose."]),
+ dict(slug="artarmon",url="https://www.artarmondentists.com",host="artarmondentists.com",name="Artarmon Dentists",place="Artarmon NSW",tags="Website · Local SEO · Video banner",
+  short="Built with the map listing as a design constraint rather than an afterthought.",
+  mid="The map listing and the site were designed as one thing, which is how you win inside a few kilometres.",
+  long=["For a practice competing inside a few kilometres, the map listing and the website have to work as one thing. So the local SEO wasn't bolted on after launch.",
+        "The site was built with it in mind: the right code so search engines and AI assistants can tell exactly what the practice does and where, details that match everywhere the business is listed, and content written for the real catchment rather than a template with a suburb name swapped in."]),
 ]
-def work_grid(limit=None):
-    out='<div class="work-grid">'
-    for url,host,name,tags in (SITES[:limit] if limit else SITES):
-        out+=f"""
-<article class="site reveal">
-  <div class="frame">
-    <div class="frame-bar"><i></i><i></i><i></i><span class="url">{host}</span><span class="live">Live</span></div>
-    <div class="screen" data-src="{url}" data-title="{name} website preview">
-      <div class="skeleton"></div>
-      <div class="overlay"><a class="btn light" href="{url}" target="_blank" rel="noopener">Open live site ↗</a></div>
-    </div>
+def shot_src(s):
+    local=f"assets/work/{s['slug']}.jpg"
+    if os.path.exists(os.path.join(OUT,local)): return local,False
+    return "https://s0.wp.com/mshots/v1/"+quote(s["url"],safe="")+"?w=900&h=1400&vpw=1280&vph=2000",True
+
+def shot(s):
+    src,remote=shot_src(s)
+    initials="".join(w[0] for w in s["name"].replace("'","").split()[:2]).upper()
+    return f"""<a class="shot" href="{s['url']}" target="_blank" rel="noopener" aria-label="Open the {s['name']} website">
+  <div class="shot-bar"><i></i><i></i><i></i><span>{s['host']}</span></div>
+  <div class="shot-img">
+    <div class="ph" aria-hidden="true"><b>{initials}</b><span>{s['name']}</span><small>{s['place']}</small></div>
+    <img src="{src}" alt="{s['name']} website homepage" width="900" height="1400" loading="lazy" decoding="async"{' data-mshot' if remote else ''} onerror="this.parentNode.classList.add('noimg')">
   </div>
-  <div class="site-meta"><h3><a href="{url}" target="_blank" rel="noopener">{name}</a></h3><span class="tags">{tags}</span></div>
+</a>"""
+
+def showcase(key="short"):
+    out='<div class="showcase">'
+    for s in SITES:
+        blurb=s.get(key) or s["short"]
+        out+=f"""
+<article class="work reveal">
+  {shot(s)}
+  <div class="work-meta"><h3>{s['name']}</h3><span>{s['place']}</span></div>
+  <p class="work-tags">{s['tags']}</p>
+  <p class="work-blurb">{blurb}</p>
+  <a class="link" href="{s['url']}" target="_blank" rel="noopener">Visit site</a>
 </article>"""
     return out+"</div>"
+
+def work_rows():
+    out=""
+    for i,s in enumerate(SITES):
+        paras="".join(f"<p>{p}</p>" for p in s["long"])
+        out+=f"""
+<article class="work-row{' flip' if i%2 else ''} reveal">
+  <div>{shot(s)}</div>
+  <div class="work-copy">
+    <p class="eyebrow">{s['place']}</p>
+    <h2 style="margin:14px 0 6px">{s['name']}</h2>
+    <p class="work-tags">{s['tags']}</p>
+    {paras}
+    <a class="link" href="{s['url']}" target="_blank" rel="noopener">Visit site</a>
+  </div>
+</article>"""
+    return out
 
 def card(name,ini,tags,rows,bar=True):
     t=''.join(f'<span class="tag {c}">{x}</span>' for c,x in tags)

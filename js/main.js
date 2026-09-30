@@ -28,35 +28,19 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Live site previews: mount only while near the viewport, unmount when scrolled past,
-  // and cap how many run at once so phones don't run out of memory.
-  const screens=document.querySelectorAll('.screen[data-src]');
-  if(screens.length){
-    const isMobile=matchMedia('(max-width:820px)').matches||navigator.hardwareConcurrency<=4;
-    const MAX=isMobile?1:2;
-    const active=new Set();
-    const mount=s=>{
-      if(s.querySelector('iframe')||active.size>=MAX)return;
-      const f=document.createElement('iframe');
-      f.src=s.dataset.src;f.title=s.dataset.title||'Live website preview';
-      f.setAttribute('tabindex','-1');f.setAttribute('aria-hidden','true');
-      f.setAttribute('loading','lazy');f.setAttribute('allow','autoplay');
-      f.addEventListener('load',()=>s.classList.add('loaded'));
-      s.prepend(f);active.add(s);
+  // Site screenshots: the screenshot service returns a small placeholder while it
+  // renders a fresh capture. Retry a few times, then fall back to the styled card.
+  document.querySelectorAll('img[data-mshot]').forEach(img=>{
+    let tries=0;
+    const check=()=>{
+      if(img.naturalWidth && img.naturalWidth<500){
+        if(tries++<4){const u=img.src.split('&_r=')[0];setTimeout(()=>{img.src=u+'&_r='+Date.now()},3000);}
+        else img.parentNode.classList.add('noimg');
+      }
     };
-    const unmount=s=>{
-      const f=s.querySelector('iframe');if(!f)return;
-      f.src='about:blank';f.remove();s.classList.remove('loaded');active.delete(s);
-    };
-    const sio=new IntersectionObserver(es=>{
-      es.forEach(e=>{e.target.dataset.vis=e.isIntersecting?'1':''});
-      screens.forEach(s=>{if(!s.dataset.vis)unmount(s)});
-      screens.forEach(s=>{if(s.dataset.vis)mount(s)});
-    },{rootMargin:isMobile?'0px 0px 120px 0px':'200px 0px'});
-    screens.forEach(s=>sio.observe(s));
-    // If the page gets hidden (tab switch) drop everything to free memory
-    addEventListener('visibilitychange',()=>{if(document.hidden)screens.forEach(unmount)});
-  }
+    img.addEventListener('load',check);
+    if(img.complete)check();
+  });
 
   // Contact modal
   const modal=document.getElementById('contact-modal');
