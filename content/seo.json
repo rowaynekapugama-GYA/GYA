@@ -1,0 +1,117 @@
+{
+  "_help": "Per-page SEO. Edit title, description, og_image (path or URL), canonical (full URL) or noindex. Blank values use the page default. Blog posts take their SEO from the front matter in content/blog.",
+  "pages": {
+    "index.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "dental-marketing.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "dental-websites.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "smileox.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "marketing.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "ai-marketing.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "work.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "about.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "contact.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "team.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "success-stories.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "awards.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "expertise.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "privacy-policy.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "terms.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    },
+    "blog.html": {
+      "title": "",
+      "description": "",
+      "og_image": "",
+      "canonical": "",
+      "noindex": false
+    }
+  }
+}

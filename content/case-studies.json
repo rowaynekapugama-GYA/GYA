@@ -1,0 +1,106 @@
+{
+  "_help": "Success stories. results is a list of {value, label, period, source}. Only add numbers you can back up from the client's reporting. testimonial is {quote, name, role, practice, suburb, photo, consent_date}. Empty fields are hidden on the live site.",
+  "stories": [
+    {
+      "slug": "caringbah",
+      "client": "The Caringbah Dentists",
+      "place": "Caringbah NSW",
+      "contact": "Dr Ram",
+      "url": "https://thecaringbahdentists.com.au",
+      "project": "",
+      "tags": "Where it started",
+      "challenge": "",
+      "what_we_did": "",
+      "results": [],
+      "testimonial": null,
+      "story": [
+        "About seven years ago Dr Ram took a punt on two retail guys running an agency at night. His practice grew, people noticed, and the referrals haven't really stopped since.",
+        "Over 100 clinics later, nothing about the method has changed. Look at the numbers. Find the problem. Fix it. Call the client."
+      ]
+    },
+    {
+      "slug": "footscray",
+      "client": "Footscray Dental Studio",
+      "place": "Footscray VIC",
+      "contact": "",
+      "url": "https://www.footscraydentalstudio.com.au",
+      "project": "footscray",
+      "tags": "Brand · Website · Google Ads",
+      "challenge": "An established practice on Barkly St, taken over by new owners and renamed. That's a tricky one. Half the job is winning new patients, and the other half is making sure the old ones don't assume the place shut down.",
+      "what_we_did": "So the old name is mentioned plainly, the new patient offer sits on the homepage with a price on it, and every treatment they do has its own page, from check-ups through to All-on-X. The Google Ads went live pointing at those same pages, so the brand, the site and the ads all turned up together.",
+      "results": [],
+      "testimonial": null,
+      "story": []
+    },
+    {
+      "slug": "my-dentist",
+      "client": "My Dentist",
+      "place": "Alderley QLD",
+      "contact": "",
+      "url": "https://dentist-alderley-newmarket.com.au",
+      "project": "my-dentist",
+      "tags": "Website · Positioning · Suburb pages",
+      "challenge": "This practice knows exactly what it is: whole-body, low-tox dentistry. That's a great position and an easy one to overdo, because the same site also has to work for a parent booking two kids in for a clean.",
+      "what_we_did": "The hero leads with the idea, the exam packages sit right under it with prices on them, and each suburb they draw patients from gets its own page. Someone who's never heard of holistic dentistry gets it straight away, and someone who went looking for it knows they've found the right place.",
+      "results": [],
+      "testimonial": null,
+      "story": []
+    },
+    {
+      "slug": "tooth-n-care",
+      "client": "Tooth n Care",
+      "place": "East Maitland NSW",
+      "contact": "",
+      "url": "https://toothncare.vercel.app",
+      "project": "tooth-n-care",
+      "tags": "Website · Online booking · Treatment pages",
+      "challenge": "A family practice on Lawes Street in East Maitland. Lots of kids, lots of first visits, and lots of people who haven't seen a dentist in a while and aren't thrilled about it.",
+      "what_we_did": "So Book Online is on every screen, the new patient price is on the homepage instead of hidden behind a phone call, and there's a page called Feeling Nervous? Start Here, which does exactly what it says. Every treatment has its own page, and the whole thing holds up on a phone with two bars.",
+      "results": [],
+      "testimonial": null,
+      "story": []
+    },
+    {
+      "slug": "horizon",
+      "client": "Horizon Dental",
+      "place": "Sydney CBD",
+      "contact": "",
+      "url": "https://horizon.gya.net.au",
+      "project": "horizon",
+      "tags": "Website · Booking flow · Video banner",
+      "challenge": "Built around one action. Wherever a patient lands, the path to a booking is short and obvious, and treatment pages carry their own booking prompts rather than sending someone back to a contact page to start again.",
+      "what_we_did": "Most sites make you decide twice. Once to want the thing, and again to work out how to get it. The second decision is where they lose people, so we took it out.",
+      "results": [],
+      "testimonial": null,
+      "story": []
+    },
+    {
+      "slug": "newgen",
+      "client": "New'Gen Dental Surgery",
+      "place": "Seymour VIC",
+      "contact": "",
+      "url": "https://newgen-site-sep24.vercel.app",
+      "project": "newgen",
+      "tags": "Website · Local SEO",
+      "challenge": "Seymour is regional Victoria, and in a town that size the map listing does most of the heavy lifting. People aren't comparing twelve practices. They're checking who's close, who's open and whether anyone picks up.",
+      "what_we_did": "The site was built to back the listing up: details that match everywhere the practice appears, a page for each treatment, and the phone number where a thumb can find it. Nothing fancy for the sake of it, just a site that makes the practice easy to choose.",
+      "results": [],
+      "testimonial": null,
+      "story": []
+    },
+    {
+      "slug": "artarmon",
+      "client": "Artarmon Dentists",
+      "place": "Artarmon NSW",
+      "contact": "",
+      "url": "https://www.artarmondentists.com",
+      "project": "artarmon",
+      "tags": "Website · Local SEO · Video banner",
+      "challenge": "For a practice competing inside a few kilometres, the map listing and the website have to work as one thing. So the local SEO wasn't bolted on after launch.",
+      "what_we_did": "The site was built with it in mind: the right code so search engines and AI assistants can tell exactly what the practice does and where, details that match everywhere the business is listed, and content written for the real catchment rather than a template with a suburb name swapped in.",
+      "results": [],
+      "testimonial": null,
+      "story": []
+    }
+  ]
+}

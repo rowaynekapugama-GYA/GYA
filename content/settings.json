@@ -1,0 +1,47 @@
+{
+  "_help": "Edit once here and it updates the header, footer, contact page, about page and schema everywhere. Leave a field empty to hide it.",
+  "site_url": "https://www.generateyouraudience.com",
+  "business_name": "Generate Your Audience",
+  "short_name": "GYA",
+  "legal_name": "Generate Your Audience Pty Ltd",
+  "abn": "68 620 590 481",
+  "phone_display": "1300 889 840",
+  "phone_dial": "1300889840",
+  "phone_schema": "+61 1300 889 840",
+  "email": "hello@generateyouraudience.com",
+  "founding_year": 2015,
+  "area_served": "Australia",
+  "offices": [
+    {
+      "label": "Crows Nest",
+      "street": "119 Willoughby Road",
+      "locality": "Crows Nest",
+      "region": "NSW",
+      "postcode": "2065",
+      "country": "AU",
+      "primary": true
+    },
+    {
+      "label": "Parramatta",
+      "street": "215-217 Church Street",
+      "locality": "Parramatta",
+      "region": "NSW",
+      "postcode": "2150",
+      "country": "AU",
+      "primary": false
+    }
+  ],
+  "opening_hours": "",
+  "social": {
+    "linkedin": "",
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  },
+  "contact_form_endpoint": "",
+  "images": {
+    "office_team": "team-office",
+    "first_week": "",
+    "cta_background": "team-office"
+  }
+}

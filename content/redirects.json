@@ -1,0 +1,73 @@
+{
+  "_help": "301 redirects, written into vercel.json on every build. Add every URL from the old site before the DNS switch.",
+  "redirects": [
+    {
+      "from": "/about",
+      "to": "/about.html"
+    },
+    {
+      "from": "/about-us",
+      "to": "/about.html"
+    },
+    {
+      "from": "/about-us/",
+      "to": "/about.html"
+    },
+    {
+      "from": "/contact",
+      "to": "/contact.html"
+    },
+    {
+      "from": "/contact-us",
+      "to": "/contact.html"
+    },
+    {
+      "from": "/contact-us/",
+      "to": "/contact.html"
+    },
+    {
+      "from": "/our-team",
+      "to": "/team.html"
+    },
+    {
+      "from": "/team",
+      "to": "/team.html"
+    },
+    {
+      "from": "/case-studies",
+      "to": "/success-stories.html"
+    },
+    {
+      "from": "/case-studies/",
+      "to": "/success-stories.html"
+    },
+    {
+      "from": "/portfolio",
+      "to": "/work.html"
+    },
+    {
+      "from": "/blog/",
+      "to": "/blog.html"
+    },
+    {
+      "from": "/privacy",
+      "to": "/privacy-policy.html"
+    },
+    {
+      "from": "/privacy-policy",
+      "to": "/privacy-policy.html"
+    },
+    {
+      "from": "/privacy-policy/",
+      "to": "/privacy-policy.html"
+    },
+    {
+      "from": "/terms",
+      "to": "/terms.html"
+    },
+    {
+      "from": "/terms-and-conditions",
+      "to": "/terms.html"
+    }
+  ]
+}

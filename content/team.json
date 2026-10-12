@@ -1,0 +1,58 @@
+{
+  "_help": "Founders and team members. Set published to false to hide someone. Photo is the image name in static/assets/images (without size or extension).",
+  "people": [
+    {
+      "slug": "rowayne",
+      "name": "Rowayne",
+      "full_name": "Rowayne Kapugama",
+      "role": "Founder · Strategy",
+      "job_title": "Founder",
+      "founder": true,
+      "photo": "rowayne",
+      "published": true,
+      "summary": "Ran multiple Myer stores across NSW, a bit over 60 million between them. Sets the strategy on every account: which services, which suburbs, what the budget goes on and what it should be returning by when.",
+      "profile": [
+        "Before GYA, Rowayne was a store manager at Myer, running multiple stores across NSW with a bit over 60 million in sales between them. That's where the habits come from: a number every day, a target every week, and a conversation about what's being done when the number is down.",
+        "He started GYA with Brett in 2015, building it at night while still working at Myer during the day. About seven years ago the agency took on its first dental practice, The Caringbah Dentists, and the work there led to the referrals that made dental what GYA is known for.",
+        "Today he sets the strategy on every account. Which services to push, which suburbs to target, where the budget goes, and what it should be returning by when. He's also behind SmileOX, the lead platform GYA built after watching good enquiries go cold at the front desk."
+      ],
+      "expertise": [
+        "Marketing strategy",
+        "Google Ads",
+        "Local SEO",
+        "Lead generation",
+        "SmileOX"
+      ],
+      "linkedin": "",
+      "qualifications": "",
+      "years_experience": "",
+      "specialities": ""
+    },
+    {
+      "slug": "brett",
+      "name": "Brett",
+      "full_name": "Brett Dyson",
+      "role": "Co-founder · Client success",
+      "job_title": "Co-founder",
+      "founder": true,
+      "photo": "brett",
+      "published": true,
+      "summary": "General Manager at Myer looking after NSW and ACT, a store portfolio worth over a billion dollars. Runs client success here, which mostly means making sure the fortnightly calls actually happen and that nobody is being quietly managed by a monthly report.",
+      "profile": [
+        "Before GYA, Brett was General Manager at Myer looking after NSW and ACT, a store portfolio worth over a billion dollars. Running stores at that size means you don't get to hide behind a report. If a number moves, you explain it and you fix it.",
+        "He co-founded GYA with Rowayne in 2015, building it at night while both of them were still at Myer.",
+        "Brett runs client success. In practice that means the fortnightly calls actually happen, every account has a name against it, and nobody is being quietly managed by a monthly report."
+      ],
+      "expertise": [
+        "Client success",
+        "Account management",
+        "Reporting",
+        "Retail operations"
+      ],
+      "linkedin": "",
+      "qualifications": "",
+      "years_experience": "",
+      "specialities": ""
+    }
+  ]
+}

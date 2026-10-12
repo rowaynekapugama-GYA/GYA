@@ -1,0 +1,4 @@
+{
+  "_help": "Awards, certifications and partnerships. Only add an entry once you hold it and can link to proof. type is award, certification or partnership. badge is an image path in static/assets/badges. The Awards page and trust strip stay hidden until there is at least one entry.",
+  "items": []
+}
