@@ -1,0 +1,112 @@
+{
+  "outputDirectory": "dist",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/our-team",
+      "destination": "/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/success-stories.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/",
+      "destination": "/success-stories.html",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/work.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms.html",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(css|js)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
