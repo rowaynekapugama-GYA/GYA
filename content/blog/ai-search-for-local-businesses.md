@@ -10,7 +10,7 @@ published: 2026-10-07
 updated: 2026-10-07
 image: blog/ai-search-local
 image_alt: Illustration of a question card and an answer card, like a conversation with an AI assistant
-draft: true
+draft: false
 ---
 
 Open ChatGPT and ask it for the best business in your suburb doing what you do. Someone gets named. If it isn't you, that's a decision being made about your business, in a room you're not in.
