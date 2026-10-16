@@ -10,7 +10,7 @@ published: 2026-10-07
 updated: 2026-10-07
 image: blog/map-listing-dental
 image_alt: Illustration of a map pin with rings spreading out across a local area
-draft: true
+draft: false
 ---
 
 Search "dentist" plus your suburb on your phone and look at what comes up. A few ads, then the map with three practices on it, then the regular results underneath.

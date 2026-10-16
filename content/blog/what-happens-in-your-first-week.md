@@ -10,7 +10,7 @@ published: 2026-10-07
 updated: 2026-10-07
 image: blog/first-week
 image_alt: Illustration of seven bars rising from left to right, one for each day of the first week
-draft: true
+draft: false
 ---
 
 When you sign with most agencies, the first month is mostly waiting. An onboarding form, a kickoff call, a strategy deck, and then a quiet few weeks while things get "set up".
