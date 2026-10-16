@@ -249,6 +249,7 @@ def foot(R):
       </div>
       <div><p class="ft-h">Services</p><ul>
         <li><a href="{R}dental-marketing.html">Dental marketing</a></li>
+        <li><a href="{R}dental-seo.html">Dental SEO</a></li>
         <li><a href="{R}dental-websites.html">Dental websites</a></li>
         <li><a href="{R}smileox.html">SmileOX</a></li>
         <li><a href="{R}marketing.html">Marketing for all industries</a></li>
@@ -564,6 +565,7 @@ def main():
     shutil.copytree(os.path.join(ROOT, "static"), OUTDIR, ignore=shutil.ignore_patterns("README.txt", "*.md"))
     run_template("pages")
     run_template("pages_trust")
+    run_template("pages_services")
     run_template("blog")
 
     # SEO overrides (content/seo.json). New pages are added automatically.
