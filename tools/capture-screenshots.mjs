@@ -105,8 +105,8 @@ async function shoot(p, kind, browser) {
       // column can start well below the section's photo. Use the outermost
       // section so the shot starts where the section does.
       // Page-level wrappers (elementor-section-wrap and the like) match too,
-      // so anything taller than about two screens is skipped.
-      const limit = Math.max(1800, innerHeight * 2.2);
+      // so anything taller than about three screens is skipped.
+      const limit = Math.max(1800, innerHeight * 3);
       let sec = el, cur = el;
       while ((cur = cur.parentElement) && cur !== document.body) {
         if (cur.matches('section,[class*="elementor-section" i],[class*="e-con" i],[class*="wp-block-group" i]') && cur.getBoundingClientRect().height <= limit) sec = cur;
