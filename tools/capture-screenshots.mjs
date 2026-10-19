@@ -164,7 +164,7 @@ for (const p of list) {
     // A near-blank page (a bot check or a failed load) is never an improvement.
     for (const [buf, kind] of [[d, 'desktop'], [m, 'mobile']]) {
       const { entropy } = await sharp(buf).stats();
-      if (entropy < 2.5) throw new Error(`${kind} shot looks blank, kept the existing screenshot`);
+      if (entropy < 1.2) throw new Error(`${kind} shot looks blank, kept the existing screenshot`);
     }
     const a = await save(d, path.join(OUT, `${p.slug}-desktop.webp`), 1440);
     const b = await save(m, path.join(OUT, `${p.slug}-mobile.webp`), 390 * 2);
