@@ -98,7 +98,6 @@ def story_block(R, s, i):
     elif PREVIEW:
         parts += f'<figure class="cs-quote"><blockquote>{ph("named testimonial, with written consent")}</blockquote><figcaption><span><strong>{ph("name")}</strong><small>{ph("role, practice, suburb")}</small></span></figcaption></figure>'
     links = ""
-    if s.get("url"): links += f'<a class="link" href="{esc(s["url"])}" target="_blank" rel="noopener">Visit site</a>'
     if s.get("project"): links += f'<a class="link" href="{R}work.html#{s["project"]}">See the build</a>'
     contact = f' · {esc(s["contact"])}' if s.get("contact") else ""
     return f"""<article class="cs{' flip' if i % 2 else ''}" id="{s['slug']}">

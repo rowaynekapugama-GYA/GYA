@@ -1,5 +1,5 @@
 {
-  "_help": "Work projects. Screenshots are picked up automatically from static/assets/work/<slug>-desktop.webp, -mobile.webp and -full.webp (run tools/capture-screenshots.mjs).",
+  "_help": "Work projects. Screenshots are picked up automatically from static/assets/work/<slug>-desktop.webp, -mobile.webp and -full.webp (run tools/capture-screenshots.mjs). Optional per project: \"capture\": {\"start_text\": \"...\"} starts the desktop and mobile shots at the section containing that text.",
   "projects": [
     {
       "slug": "my-dentist",
@@ -13,7 +13,10 @@
         "This practice knows exactly what it is: whole-body, low-tox dentistry. That's a great position and an easy one to overdo, because the same site also has to work for a parent booking two kids in for a clean.",
         "The hero leads with the idea, the exam packages sit right under it with prices on them, and each suburb they draw patients from gets its own page. Someone who's never heard of holistic dentistry gets it straight away, and someone who went looking for it knows they've found the right place."
       ],
-      "published": true
+      "published": true,
+      "capture": {
+        "start_text": "Your care journey"
+      }
     },
     {
       "slug": "tooth-n-care",
@@ -71,6 +74,26 @@
         "For a practice competing inside a few kilometres, the map listing and the website have to work as one thing. So the local SEO wasn't bolted on after launch.",
         "The site was built with it in mind: the right code so search engines and AI assistants can tell exactly what the practice does and where, details that match everywhere the business is listed, and content written for the real catchment rather than a template with a suburb name swapped in."
       ],
+      "published": true,
+      "capture": {
+        "start_text": "Why Choose Us"
+      }
+    },
+    {
+      "slug": "sunshine-coast-ofis",
+      "url": "https://https-sunshinecoastofis-com-au.vercel.app/",
+      "host": "sunshinecoastofis.com.au",
+      "name": "Sunshine Coast Oral, Facial & Implant Specialists",
+      "place": "Buderim QLD",
+      "tags": "Website · Specialist positioning · Referrals",
+      "short": "Two oral and maxillofacial surgeons who take the cases others refer on. The site had to speak to patients and referring dentists at the same time.",
+      "long": [
+        "A specialist practice is a different brief. Half the visitors are patients working out what wisdom teeth or implant surgery involves, and the other half are dentists deciding where to send them. The site had to be clear for both without feeling like two websites stapled together.",
+        "So the surgeons and their credentials lead, every procedure gets a plain-English page, the five partner hospitals from Maroochydore to Hervey Bay are listed so patients know where surgery happens, and referring dentists get a form they can finish in under two minutes."
+      ],
+      "capture": {
+        "start_text": "Two specialists who take on the cases"
+      },
       "published": true
     }
   ]
