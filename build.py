@@ -414,7 +414,7 @@ def work_rows(R=""):
         paras = "".join(f"<p>{x}</p>" for x in p["long"])
         out += f"""
 <article class="work-row{' flip' if i % 2 else ''} reveal" id="{p['slug']}">
-  <div class="work-mock">{browser(R, p, 'full', scroll=True)}{phone(R, p)}</div>
+  <div class="work-mock">{browser(R, p)}{phone(R, p)}</div>
   <div class="work-copy">
     <p class="eyebrow">{esc(p['place'])}</p>
     <h2 style="margin:14px 0 6px">{esc(p['name'])}</h2>
