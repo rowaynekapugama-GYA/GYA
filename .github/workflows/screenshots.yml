@@ -49,7 +49,9 @@ jobs:
           SLUGS: ${{ inputs.slugs }}
         # A skipped site (bot check, failed load) keeps its existing screenshot
         # and must not stop the ones that worked from being committed.
-        run: node capture-screenshots.mjs $SLUGS || echo "Some sites were skipped, see above."
+        run: |
+          set -o pipefail
+          (date -u; node capture-screenshots.mjs $SLUGS) 2>&1 | tee ../static/assets/work/last-run.txt || echo "Some sites were skipped, see above."
 
       - name: Commit the images
         run: |
