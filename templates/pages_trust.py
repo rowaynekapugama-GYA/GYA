@@ -123,7 +123,7 @@ def stories_body(R):
 """
 
 add(slug="success-stories.html", title="Success Stories | Dental and Local Marketing Results | GYA",
-    desc="How GYA helped The Caringbah Dentists, Footscray Dental Studio, My Dentist, Tooth n Care, Horizon Dental and more. What they needed and what we did.",
+    desc="How GYA helped The Caringbah Dentists, My Dentist, Tooth n Care, Horizon Dental, Artarmon Dentists and more. What they needed and what we did.",
     crumbs=[("Home", "index.html"), ("Success stories", "success-stories.html")], nav="work.html",
     schema=[{"@type": "CollectionPage", "@id": SITE + "/success-stories.html", "name": "Success stories", "about": {"@id": ORG_ID}}],
     body=stories_body)

@@ -1,0 +1,54 @@
+# Captures real screenshots of every project in content/projects.json and
+# commits them to the branch it runs on. GitHub's runners can reach the client
+# sites, which Claude's workspace can't.
+#
+# Run it from the Actions tab (Capture project screenshots > Run workflow),
+# or: gh workflow run screenshots.yml --ref <branch> -f slugs="artarmon newgen"
+# Then run `python3 build.py` so dist/ picks up the new images.
+name: Capture project screenshots
+
+on:
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: "Project slugs, space separated. Leave blank for all."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Playwright and sharp
+        working-directory: tools
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Capture screenshots
+        working-directory: tools
+        env:
+          SLUGS: ${{ inputs.slugs }}
+        run: node capture-screenshots.mjs $SLUGS
+
+      - name: Commit the images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add static/assets/work
+          if git diff --cached --quiet; then
+            echo "No new screenshots."
+          else
+            git commit -m "Update project screenshots"
+            git push
+          fi

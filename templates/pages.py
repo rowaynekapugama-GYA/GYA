@@ -326,7 +326,7 @@ pages["dental-websites.html"]=dict(
 <section class="section dark" id="builds"><div class="wrap">
   <div class="split" style="align-items:end;margin-bottom:clamp(32px,5vw,64px)">
     <div class="reveal"><p class="eyebrow">Recent builds</p><h2 style="margin-top:18px">Built to load fast and book patients.</h2></div>
-    <p class="lead reveal">Six practices, six different personalities, built on the same bones. Here's what went into each.</p>
+    <p class="lead reveal">Five practices, five different personalities, built on the same bones. Here's what went into each.</p>
   </div>
   {showcase("mid")}
 </div></section>
@@ -570,7 +570,7 @@ pages["ai-marketing.html"]=dict(
 # ================= WORK =================
 pages["work.html"]=dict(
  title="Recent Work | Dental Websites, Branding and Video | GYA",
- desc="Recent websites by GYA for Footscray Dental Studio, My Dentist, Tooth n Care, Horizon Dental, New'Gen and Artarmon Dentists, and why each was built that way.",
+ desc="Recent websites by GYA for My Dentist, Tooth n Care, Horizon Dental, New'Gen Dental Surgery and Artarmon Dentists, and why each was built that way.",
  schema={"@context":"https://schema.org","@type":"CollectionPage","name":"Recent work","isPartOf":{"@type":"WebSite","url":SITE}},
  body=f"""
 <section class="page-hero"><div class="wrap">
@@ -588,7 +588,7 @@ pages["work.html"]=dict(
   <div class="split">
     <div class="reveal"><p class="eyebrow">What they share</p><h2 style="margin-top:18px">Different businesses. Same spine.</h2></div>
     <div class="story reveal">
-      <p>These are six different personalities and six different budgets, but the bones underneath are the same.</p>
+      <p>These are five different personalities and five different budgets, but the bones underneath are the same.</p>
       <p>A page for every service, because a service in a list can't rank and a page about it can. An enquiry route on every screen. Video and images shrunk down and loaded a moment after the rest of the page, so it looks good without making anyone wait. And a build light enough to hold up on a phone with two bars of reception, which is how a lot of people will meet the business for the first time.</p>
       <p>None of it is the sort of thing you notice at a glance. All of it is the reason these sites keep working long after launch.</p>
     </div>
