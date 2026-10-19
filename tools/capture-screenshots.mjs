@@ -40,6 +40,9 @@ async function settle(page) {
     window.scrollTo(0, 0);
   });
   await page.addStyleTag({ content: HIDE });
+  // Lazy images: load them all now and wait for them to arrive.
+  await page.evaluate(() => document.querySelectorAll('img').forEach(i => { i.loading = 'eager'; if (i.dataset.src && !i.src) i.src = i.dataset.src; }));
+  await page.waitForFunction(() => [...document.images].every(i => i.complete), { timeout: 10000 }).catch(() => {});
   // let hero videos show a frame, and reveal-on-scroll content settle
   await page.evaluate(() => document.querySelectorAll('video').forEach(v => { try { v.muted = true; v.play(); } catch (e) {} }));
   await page.waitForTimeout(2500);
@@ -90,17 +93,46 @@ async function shoot(p, kind, browser) {
   const page = await ctx.newPage();
   const res = await page.goto(p.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   if (!res || res.status() >= 400) throw new Error(`HTTP ${res && res.status()}`);
+  // Cloudflare and similar sometimes show a "checking your connection" page to
+  // a cloud server. Give it a moment to pass, otherwise skip the project so
+  // the existing screenshot stays.
+  for (let tries = 0; tries < 4; tries++) {
+    const challenged = await page.evaluate(() => /just a moment|checking (the site|your) (connection|browser)|verify you are human|attention required/i.test(document.title + ' ' + document.body.innerText.slice(0, 600)));
+    if (!challenged) break;
+    if (tries === 3) throw new Error('site is showing a bot check page, kept the existing screenshot');
+    await page.waitForTimeout(6000);
+  }
   await settle(page);
   // Optional: start the desktop and mobile shots at a section further down the
   // page (projects.json "capture": {"start_text": "..."}), for sites whose top
-  // of page doesn't show off the work.
-  const start = p.capture && p.capture.start_text;
-  if (start && kind !== 'full') {
+  // of page doesn't show off the work. "mobile_start_text" picks a different
+  // section for the phone, or "" to keep the top of the page there.
+  const cap = p.capture || {};
+  const start = kind === 'full' ? '' : (mobile && 'mobile_start_text' in cap ? cap.mobile_start_text : cap.start_text);
+  if (start) {
     const found = await page.evaluate((text) => {
       const el = [...document.querySelectorAll('h1,h2,h3,h4,p,span,div')].find(e => e.children.length === 0 && e.textContent.trim().toLowerCase().includes(text.toLowerCase()));
       if (!el) return false;
-      const sec = el.closest('section,[class*="elementor-section" i],[class*="e-con" i]') || el;
-      window.scrollTo(0, Math.max(0, sec.getBoundingClientRect().top + window.scrollY - 20));
+      // On phones most themes stack the section's columns, so the heading's own
+      // column can start well below the section's photo. Use the outermost
+      // section so the shot starts where the section does.
+      // Page-level wrappers (elementor-section-wrap and the like) match too,
+      // so anything taller than about three screens is skipped.
+      const limit = Math.max(1800, innerHeight * 3);
+      let sec = el, cur = el;
+      while ((cur = cur.parentElement) && cur !== document.body) {
+        if (cur.matches('section,[class*="elementor-section" i],[class*="e-con" i],[class*="wp-block-group" i]') && cur.getBoundingClientRect().height <= limit) sec = cur;
+      }
+      const target = () => Math.max(0, sec.getBoundingClientRect().top + window.scrollY - 20);
+      window.scrollTo(0, target());
+      // Sticky and fixed headers would sit on top of the section. Remove them,
+      // since the shot isn't of the top of the page any more, then line the
+      // section up again because removing a sticky bar can shift the page.
+      for (const h of document.body.querySelectorAll('header,nav,[class*="header" i],[id*="header" i],[class*="navbar" i],[class*="sticky" i]')) {
+        const cs = getComputedStyle(h), r = h.getBoundingClientRect();
+        if ((cs.position === 'fixed' || cs.position === 'sticky') && r.top < 160 && r.width > innerWidth * 0.6) h.style.setProperty('display', 'none', 'important');
+      }
+      window.scrollTo(0, target());
       return true;
     }, start);
     if (!found) console.log(`     start_text not found for ${p.slug}, using the top of the page`);
@@ -129,6 +161,11 @@ for (const p of list) {
     const d = await shoot(p, 'desktop', browser);
     const m = await shoot(p, 'mobile', browser);
     const f = await shoot(p, 'full', browser);
+    // A near-blank page (a bot check or a failed load) is never an improvement.
+    for (const [buf, kind] of [[d, 'desktop'], [m, 'mobile']]) {
+      const { entropy } = await sharp(buf).stats();
+      if (entropy < 1.2) throw new Error(`${kind} shot looks blank, kept the existing screenshot`);
+    }
     const a = await save(d, path.join(OUT, `${p.slug}-desktop.webp`), 1440);
     const b = await save(m, path.join(OUT, `${p.slug}-mobile.webp`), 390 * 2);
     const c = await save(f, path.join(OUT, `${p.slug}-full.webp`), 1200, 4200);
