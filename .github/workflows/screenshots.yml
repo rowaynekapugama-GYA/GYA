@@ -15,6 +15,7 @@ on:
     paths:
       - content/projects.json
       - .github/workflows/screenshots.yml
+      - tools/capture-screenshots.mjs
   workflow_dispatch:
     inputs:
       slugs:

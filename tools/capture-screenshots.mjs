@@ -43,6 +43,41 @@ async function settle(page) {
   // let hero videos show a frame, and reveal-on-scroll content settle
   await page.evaluate(() => document.querySelectorAll('video').forEach(v => { try { v.muted = true; v.play(); } catch (e) {} }));
   await page.waitForTimeout(2500);
+  await tidy(page);
+}
+
+// Video hosts (Vimeo, YouTube) block cloud servers such as GitHub's runners and
+// show an error box instead of the video. Hide embedded players so the section
+// shows its own background, and collapse empty video wrappers. Then hide small
+// floating widgets pinned to the bottom of the screen (accessibility buttons,
+// chat bubbles, sticky call bars) so they don't sit on top of the design.
+async function tidy(page) {
+  const report = await page.evaluate(() => {
+    const out = { videos: [], floats: [] };
+    const host = /vimeo|youtube|youtu\.be|wistia|vidyard/i;
+    document.querySelectorAll('iframe').forEach(f => {
+      if (host.test(f.src || f.dataset.src || '')) { out.videos.push(f.src.slice(0, 80)); f.style.setProperty('display', 'none', 'important'); }
+    });
+    document.querySelectorAll('.elementor-background-video-container, [class*="video-background" i], [class*="bg-video" i]').forEach(c => {
+      const v = c.querySelector('video');
+      if (!v || v.readyState < 2) c.style.setProperty('visibility', 'hidden', 'important');
+    });
+    const vh = window.innerHeight, vw = window.innerWidth;
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+      if (cs.position !== 'fixed' || cs.display === 'none') continue;
+      const r = el.getBoundingClientRect();
+      if (!r.width || !r.height) continue;
+      const smallWidget = r.width * r.height < 40000;
+      const bottomBar = r.height < 140 && r.top > vh * 0.6;
+      if ((smallWidget || bottomBar) && r.top > vh * 0.5 && !(r.top < 5 && r.width > vw * 0.9)) {
+        out.floats.push((el.id || el.className || el.tagName).toString().slice(0, 40));
+        el.style.setProperty('display', 'none', 'important');
+      }
+    }
+    return out;
+  });
+  if (report.videos.length || report.floats.length) console.log(`     hid videos: ${report.videos.join(', ') || 'none'} | floats: ${report.floats.join(', ') || 'none'}`);
 }
 
 async function shoot(p, kind, browser) {
