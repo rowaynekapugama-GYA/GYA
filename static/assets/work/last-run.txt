@@ -1,0 +1,20 @@
+Mon Oct 19 08:02:14 UTC 2026
+ok   my-dentist     desktop 54KB  mobile 55KB  full 173KB
+     hid videos: none | floats: sticky-call
+ok   tooth-n-care   desktop 75KB  mobile 64KB  full 105KB
+     hid videos: none | floats: sn-toggle-button 
+     hid videos: none | floats: sn-toggle-button 
+     hid videos: none | floats: sn-toggle-button 
+ok   horizon        desktop 59KB  mobile 34KB  full 102KB
+     hid videos: none | floats: sticky-call
+ok   newgen         desktop 57KB  mobile 58KB  full 140KB
+     hid videos: https://player.vimeo.com/video/1189713204?muted=1&autoplay=1&loop=1&background=1 | floats: none
+     hid videos: https://player.vimeo.com/video/1189713204?muted=1&autoplay=1&loop=1&background=1 | floats: none
+     hid videos: https://player.vimeo.com/video/1189713204?muted=1&autoplay=1&loop=1&background=1 | floats: none
+ok   artarmon       desktop 59KB  mobile 31KB  full 130KB
+     hid videos: https://player.vimeo.com/video/1226478707?background=1&autoplay=1&loop=1&muted=1 | floats: none
+     hid videos: https://player.vimeo.com/video/1226478707?background=1&autoplay=1&loop=1&muted=1 | floats: mcta
+     hid videos: https://player.vimeo.com/video/1226478707?background=1&autoplay=1&loop=1&muted=1 | floats: none
+FAIL sunshine-coast-ofis desktop shot looks blank, kept the existing screenshot
+
+Skipped: sunshine-coast-ofis. Check those sites load, then rerun with their slugs.
