@@ -382,7 +382,7 @@ def initials(p): return "".join(w[0] for w in p["name"].replace("'", "").split()
 def browser(R, p, kind="desktop", scroll=False):
     ph_ = f'<div class="ph" aria-hidden="true"><b>{initials(p)}</b><span>{esc(p["name"])}</span><small>{esc(p["place"])}</small></div>'
     return f"""<div class="mock-browser{' scrolls' if scroll else ''}">
-  <div class="mb-bar"><i></i><i></i><i></i><span>{esc(p['host'])}</span></div>
+  <div class="mb-bar"><i></i><i></i><i></i><span>{esc(p['name'])}</span></div>
   <div class="mb-screen"{' data-scroll-shot' if scroll else ''}>{ph_}{shot_img(R, p, kind, '(max-width:860px) 92vw, 760px')}</div>
 </div>"""
 
@@ -399,7 +399,7 @@ def project_carousel(R=""):
     <p class="pcard-place">{esc(p['place'])}</p>
     <p class="work-tags">{esc(p['tags'])}</p>
     <p class="pcard-blurb">{p['short']}</p>
-    <p class="pcard-actions"><span class="link">Read the story</span><a class="link ext" href="{p['url']}" target="_blank" rel="noopener"{ti}>Visit site ↗</a></p>
+    <p class="pcard-actions"><span class="link">Read the story</span></p>
   </div>
 </article>"""
     a = "".join(card(p) for p in PROJECTS)
@@ -420,7 +420,7 @@ def work_rows(R=""):
     <h2 style="margin:14px 0 6px">{esc(p['name'])}</h2>
     <p class="work-tags">{esc(p['tags'])}</p>
     {paras}
-    <p class="work-links"><a class="link" href="{p['url']}" target="_blank" rel="noopener">Visit site</a><a class="link" href="{R}success-stories.html#{p['slug']}">Read the story</a></p>
+    <p class="work-links"><a class="link" href="{R}success-stories.html#{p['slug']}">Read the story</a></p>
   </div>
 </article>"""
     return out
@@ -435,7 +435,7 @@ def showcase(key="short", R=""):
   <div class="work-meta"><h3>{esc(p['name'])}</h3><span>{esc(p['place'])}</span></div>
   <p class="work-tags">{esc(p['tags'])}</p>
   <p class="work-blurb">{blurb}</p>
-  <p class="work-links"><a class="link" href="{p['url']}" target="_blank" rel="noopener">Visit site</a><a class="link" href="{R}success-stories.html#{p['slug']}">Read the story</a></p>
+  <p class="work-links"><a class="link" href="{R}success-stories.html#{p['slug']}">Read the story</a></p>
 </article>"""
     return out + "</div>"
 
