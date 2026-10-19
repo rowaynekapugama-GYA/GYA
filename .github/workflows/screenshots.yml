@@ -8,6 +8,13 @@
 name: Capture project screenshots
 
 on:
+  # Runs by itself on any branch except main when the project list changes,
+  # so a new project gets screenshots before its pull request is approved.
+  push:
+    branches-ignore: [main]
+    paths:
+      - content/projects.json
+      - .github/workflows/screenshots.yml
   workflow_dispatch:
     inputs:
       slugs:
