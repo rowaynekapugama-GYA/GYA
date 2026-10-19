@@ -111,13 +111,16 @@ async function shoot(p, kind, browser) {
       while ((cur = cur.parentElement) && cur !== document.body) {
         if (cur.matches('section,[class*="elementor-section" i],[class*="e-con" i],[class*="wp-block-group" i]') && cur.getBoundingClientRect().height <= limit) sec = cur;
       }
-      window.scrollTo(0, Math.max(0, sec.getBoundingClientRect().top + window.scrollY - 20));
-      // Sticky and fixed headers would sit on top of the section. Hide them,
-      // since the shot isn't of the top of the page any more.
+      const target = () => Math.max(0, sec.getBoundingClientRect().top + window.scrollY - 20);
+      window.scrollTo(0, target());
+      // Sticky and fixed headers would sit on top of the section. Remove them,
+      // since the shot isn't of the top of the page any more, then line the
+      // section up again because removing a sticky bar can shift the page.
       for (const h of document.body.querySelectorAll('header,nav,[class*="header" i],[id*="header" i],[class*="navbar" i],[class*="sticky" i]')) {
         const cs = getComputedStyle(h), r = h.getBoundingClientRect();
-        if ((cs.position === 'fixed' || cs.position === 'sticky') && r.top < 160 && r.width > innerWidth * 0.6) h.style.setProperty('visibility', 'hidden', 'important');
+        if ((cs.position === 'fixed' || cs.position === 'sticky') && r.top < 160 && r.width > innerWidth * 0.6) h.style.setProperty('display', 'none', 'important');
       }
+      window.scrollTo(0, target());
       return true;
     }, start);
     if (!found) console.log(`     start_text not found for ${p.slug}, using the top of the page`);
