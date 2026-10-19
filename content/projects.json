@@ -1,5 +1,5 @@
 {
-  "_help": "Work projects. Screenshots are picked up automatically from static/assets/work/<slug>-desktop.webp, -mobile.webp and -full.webp (run tools/capture-screenshots.mjs). Optional per project: \"capture\": {\"start_text\": \"...\"} starts the desktop and mobile shots at the section containing that text.",
+  "_help": "Work projects. Screenshots are picked up automatically from static/assets/work/<slug>-desktop.webp, -mobile.webp and -full.webp (run tools/capture-screenshots.mjs). Optional per project: \"capture\": {\"start_text\": \"...\"} starts the desktop and mobile shots at the section containing that text; add \"mobile_start_text\" to use a different section on the phone, or \"\" to keep the top of the page on the phone.",
   "projects": [
     {
       "slug": "my-dentist",
@@ -76,7 +76,8 @@
       ],
       "published": true,
       "capture": {
-        "start_text": "Why Choose Us"
+        "start_text": "Why Choose Us",
+        "mobile_start_text": ""
       }
     },
     {
