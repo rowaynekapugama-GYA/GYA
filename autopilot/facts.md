@@ -38,7 +38,7 @@ Last updated: 16 October 2026
 
 ## Client names cleared for publishing
 
-Already named on the GYA site, so safe to mention: The Caringbah Dentists (Caringbah NSW), Footscray Dental Studio (Footscray VIC), My Dentist (Alderley QLD), Tooth n Care (East Maitland NSW), Horizon Dental (Sydney CBD), New'Gen Dental Surgery (Seymour VIC), Artarmon Dentists (Artarmon NSW).
+Already named on the GYA site, so safe to mention: The Caringbah Dentists (Caringbah NSW), My Dentist (Alderley QLD), Tooth n Care (East Maitland NSW), Horizon Dental (Sydney CBD), New'Gen Dental Surgery (Seymour VIC), Artarmon Dentists (Artarmon NSW).
 
 Any other client name, result or quote needs Rowayne's sign-off first. No numbers are cleared yet.
 
