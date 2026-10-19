@@ -40,6 +40,9 @@ async function settle(page) {
     window.scrollTo(0, 0);
   });
   await page.addStyleTag({ content: HIDE });
+  // Lazy images: load them all now and wait for them to arrive.
+  await page.evaluate(() => document.querySelectorAll('img').forEach(i => { i.loading = 'eager'; if (i.dataset.src && !i.src) i.src = i.dataset.src; }));
+  await page.waitForFunction(() => [...document.images].every(i => i.complete), { timeout: 10000 }).catch(() => {});
   // let hero videos show a frame, and reveal-on-scroll content settle
   await page.evaluate(() => document.querySelectorAll('video').forEach(v => { try { v.muted = true; v.play(); } catch (e) {} }));
   await page.waitForTimeout(2500);
@@ -90,6 +93,15 @@ async function shoot(p, kind, browser) {
   const page = await ctx.newPage();
   const res = await page.goto(p.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   if (!res || res.status() >= 400) throw new Error(`HTTP ${res && res.status()}`);
+  // Cloudflare and similar sometimes show a "checking your connection" page to
+  // a cloud server. Give it a moment to pass, otherwise skip the project so
+  // the existing screenshot stays.
+  for (let tries = 0; tries < 4; tries++) {
+    const challenged = await page.evaluate(() => /just a moment|checking (the site|your) (connection|browser)|verify you are human|attention required/i.test(document.title + ' ' + document.body.innerText.slice(0, 600)));
+    if (!challenged) break;
+    if (tries === 3) throw new Error('site is showing a bot check page, kept the existing screenshot');
+    await page.waitForTimeout(6000);
+  }
   await settle(page);
   // Optional: start the desktop and mobile shots at a section further down the
   // page (projects.json "capture": {"start_text": "..."}), for sites whose top
@@ -149,6 +161,11 @@ for (const p of list) {
     const d = await shoot(p, 'desktop', browser);
     const m = await shoot(p, 'mobile', browser);
     const f = await shoot(p, 'full', browser);
+    // A near-blank page (a bot check or a failed load) is never an improvement.
+    for (const [buf, kind] of [[d, 'desktop'], [m, 'mobile']]) {
+      const { entropy } = await sharp(buf).stats();
+      if (entropy < 2.5) throw new Error(`${kind} shot looks blank, kept the existing screenshot`);
+    }
     const a = await save(d, path.join(OUT, `${p.slug}-desktop.webp`), 1440);
     const b = await save(m, path.join(OUT, `${p.slug}-mobile.webp`), 390 * 2);
     const c = await save(f, path.join(OUT, `${p.slug}-full.webp`), 1200, 4200);
