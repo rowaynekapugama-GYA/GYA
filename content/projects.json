@@ -13,7 +13,10 @@
         "This practice knows exactly what it is: whole-body, low-tox dentistry. That's a great position and an easy one to overdo, because the same site also has to work for a parent booking two kids in for a clean.",
         "The hero leads with the idea, the exam packages sit right under it with prices on them, and each suburb they draw patients from gets its own page. Someone who's never heard of holistic dentistry gets it straight away, and someone who went looking for it knows they've found the right place."
       ],
-      "published": true
+      "published": true,
+      "capture": {
+        "start_text": "The oral-body connection"
+      }
     },
     {
       "slug": "tooth-n-care",

@@ -91,6 +91,21 @@ async function shoot(p, kind, browser) {
   const res = await page.goto(p.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   if (!res || res.status() >= 400) throw new Error(`HTTP ${res && res.status()}`);
   await settle(page);
+  // Optional: start the desktop and mobile shots at a section further down the
+  // page (projects.json "capture": {"start_text": "..."}), for sites whose top
+  // of page doesn't show off the work.
+  const start = p.capture && p.capture.start_text;
+  if (start && kind !== 'full') {
+    const found = await page.evaluate((text) => {
+      const el = [...document.querySelectorAll('h1,h2,h3,h4,p,span,div')].find(e => e.children.length === 0 && e.textContent.trim().toLowerCase().includes(text.toLowerCase()));
+      if (!el) return false;
+      const sec = el.closest('section,[class*="elementor-section" i],[class*="e-con" i]') || el;
+      window.scrollTo(0, Math.max(0, sec.getBoundingClientRect().top + window.scrollY - 20));
+      return true;
+    }, start);
+    if (!found) console.log(`     start_text not found for ${p.slug}, using the top of the page`);
+    await page.waitForTimeout(1200);
+  }
   const buf = await page.screenshot({ fullPage: kind === 'full', type: 'png' });
   await ctx.close();
   return buf;
