@@ -108,3 +108,103 @@ add(slug="dental-seo.html",
     nav="dental-marketing.html",
     schema=[{"@type": "Service", "name": "Dental SEO", "provider": ORG, "serviceType": "Dental SEO, local SEO for dentists, Google Business Profile optimisation", "areaServed": "AU"}, SEO_FAQ_S],
     body=dental_seo_body)
+
+# ================= DENTAL GOOGLE ADS =================
+ADS_FAQ, ADS_FAQ_S = faq([
+ ("How quickly do Google Ads bring in enquiries?", "Usually within days of going live. In our first week with a new clinic, ads are running by day four."),
+ ("How much should I spend on Google Ads?", "Most clinics we manage put between 3% and 8% of revenue into marketing, mostly Google Ads and SEO. We set the ads budget by treatment goal and how competitive your suburb is, then track it to booked appointments."),
+ ("Should implant and check-up ads share a budget?", "No. An implant patient and a check-up patient are worth very different amounts, so each treatment gets its own campaign and its own budget."),
+ ("Do I still need Google Ads if my SEO is good?", "Usually yes, at least at the start. SEO takes months and only covers the searches you rank for. Ads cover the gap and show us which treatments actually convert."),
+ ("Can my ads include special offers?", "Only with clear terms. AHPRA's advertising rules don't allow offers without them, and we write every ad and landing page to those rules before it goes live."),
+ ("Will you run ads for my competitor?", "Not if they're a dental practice within 7km of you."),
+])
+
+def dental_google_ads_body(R):
+    crumbs = [("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("Dental Google Ads", "dental-google-ads.html")]
+    return f"""
+<section class="page-hero"><div class="wrap">
+  {crumbs_html(R, crumbs)}
+  <p class="eyebrow">Google Ads for dentists</p>
+  <h1 style="margin-top:22px">Google Ads for dentists, built per treatment and per suburb, and judged on <span class="u">booked patients</span>.</h1>
+  <p class="lead">Google Ads is the quickest way to get new patients ringing, usually within days. But only if implants, Invisalign, emergency and check-ups each get their own campaign, every click lands on a page about the thing they searched for, and you can see which ads actually filled a chair. That's how we run them.</p>
+  <p class="muted" style="margin-top:14px">We manage marketing for more than 100 dental clinics across Australia.</p>
+  <div class="hero-actions">{CALL}<a class="btn ghost" href="#how">How we set it up</a></div>
+</div></section>
+
+<section class="section tight" id="how"><div class="wrap">
+  <div class="grid g3" style="margin-bottom:clamp(40px,6vw,80px)">
+    <div class="stat reveal"><strong>100+</strong><span>dental clinics we manage</span></div>
+    <div class="stat reveal"><strong>Day 4</strong><span>your ads go live in week one</span></div>
+    <div class="stat reveal"><strong>7km</strong><span>minimum gap between our dental clients</span></div>
+  </div>
+  <p class="eyebrow reveal" style="margin-bottom:18px">How we build a dental account</p>
+  {steps([
+   ("1. One campaign per treatment", "An implant patient and a check-up patient are worth completely different amounts, so they don't belong in the same campaign sharing a budget.",
+    ["Implants, Invisalign, emergency, cosmetic and general each get their own campaign. That way the budget goes where you want the patients, and a cheap check-up search can't quietly eat the money meant for implants."]),
+   ("2. Built around your suburbs", "Patients book close to home. Ads shown to people who'll never make the drive are money gone.",
+    ["We target the suburbs you actually draw patients from, and shift spend toward the treatment and suburb combinations bringing in enquiries this month, not the plan someone set in January."]),
+   ("3. Negative keywords from day one", "This is the quiet work that saves the most money.",
+    ["Dental accounts leak budget on job seekers, students, DIY searches and treatments you don't offer. We build those negative keyword lists before the first ad runs, then keep adding to them every week the account is live."]),
+   ("4. Every click lands on the right page", "Sending ad traffic to your homepage is the most expensive habit in dental advertising.",
+    [f"Someone who searched for Invisalign lands on a page about Invisalign, with a clear way to book. If those pages don't exist yet, we build them. <a class=\"link\" href=\"{R}dental-websites.html\">More on dental websites</a>."]),
+   ("5. Tracked to the booking, not the click", "Clicks are easy to buy. Patients are what you're paying for.",
+    ["We track calls and forms from every campaign, and SmileOX picks up each enquiry the moment it comes in. So we optimise toward booked appointments, and you can see which treatments and suburbs are worth more budget."]),
+   ("6. Written to AHPRA's rules", "Every ad and landing page is checked against the AHPRA advertising guidelines before it goes live.",
+    ["No testimonials about clinical care, nothing that sets up unreasonable expectations, and no offers without clear terms. Getting a practice in trouble isn't a growth strategy."]),
+  ])}
+</div></section>
+
+<section class="section dark"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">Ads or SEO?</p><h2 style="margin-top:18px">Straight answer: usually both, ads first.</h2></div>
+    <div class="reveal">
+      <p class="lead">Google Ads can produce enquiries in days. Map movement from SEO usually takes 6 to 10 weeks, and competitive terms like "dental implants" take 4 to 9 months.</p>
+      <p style="margin-top:18px">So ads cover the gap while SEO builds, and they tell us which treatments actually convert before we spend months ranking for them. Ads stop the day you stop paying. The map listing keeps working. <a class="link" href="{R}dental-seo.html">How we do dental SEO</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">What happens to the enquiries</p><h2 style="margin-top:18px">A click you paid for deserves a fast reply.</h2></div>
+    <div class="reveal">
+      <p class="lead">You pay for the click whether or not anyone answers. An enquiry answered in a minute behaves completely differently to one answered the next morning.</p>
+      <p style="margin-top:18px">Every enquiry from your ads goes through SmileOX, our own lead platform. It replies to new enquiries in under 60 seconds, asks the questions your team would ask, scores the lead, and texts back the calls you miss. Your team only speaks to people ready to book. <a class="link" href="{R}smileox.html">See how SmileOX works</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section tight"><div class="wrap">
+  <div class="grid g2">
+    <div class="card reveal"><h3>What you get</h3><ul>
+      <li>A campaign for each treatment you want more of</li>
+      <li>Negative keyword lists built on day one and kept up</li>
+      <li>Call and form tracking, so you know which ads booked patients</li>
+      <li>A call every fortnight to look at the numbers together</li>
+    </ul></div>
+    <div class="card reveal"><h3>What we won't do</h3><ul>
+      <li>Run ads for another dental clinic within 7km of you</li>
+      <li>Report on clicks and impressions and call it a result</li>
+      <li>Spend your budget marketing ourselves</li>
+      <li>Write ads that break AHPRA's advertising rules</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="sticky reveal"><p class="eyebrow">Straight answers</p><h2 style="margin-top:18px">Questions dentists ask about Google Ads.</h2></div>
+    <div class="reveal">{ADS_FAQ}</div>
+  </div>
+</div></section>
+{author_section(R)}
+{cta("Empty books give us anxiety. Genuinely.", "If you're paying for Google Ads and can't say which patients came from it, call us. Twenty minutes, no pitch, just a look at your account and what we'd change.", R=R)}
+"""
+
+add(slug="dental-google-ads.html",
+    title="Google Ads for Dentists | Dental PPC Agency Australia | GYA",
+    desc="Google Ads for dentists, built per treatment and per suburb, with negative keywords from day one and tracking to booked patients. 100+ clinics Australia-wide.",
+    crumbs=[("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("Dental Google Ads", "dental-google-ads.html")],
+    nav="dental-marketing.html",
+    schema=[{"@type": "Service", "name": "Dental Google Ads", "provider": ORG, "serviceType": "Google Ads for dentists, dental PPC, dental Google Ads management", "areaServed": "AU"}, ADS_FAQ_S],
+    body=dental_google_ads_body)
