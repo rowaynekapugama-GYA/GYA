@@ -7,7 +7,7 @@ Start: week of 19 October 2026. Each line shows `[ ]` until the item is live, th
 | Week | Wednesday page | Tuesday post | Thursday post |
 | --- | --- | --- | --- |
 | 1 | [x] Dental SEO (/dental-seo.html), live via PR 1 | [ ] How to rank a dental practice on Google Maps | [ ] Why your practice ranks for its name and nothing else |
-| 2 | [ ] Dental Google Ads (/dental-google-ads.html) | [ ] Why implant ads and check-up ads shouldn't share a budget | [ ] The negative keywords every dental Google Ads account needs |
+| 2 | [x] Dental Google Ads (/dental-google-ads.html), PR 8 | [ ] Why implant ads and check-up ads shouldn't share a budget | [ ] The negative keywords every dental Google Ads account needs |
 | 3 | [ ] SmileOX restructure + Missed-call text-back page | [ ] How fast should a dental practice reply to an enquiry? | [ ] What a missed call actually costs a dental practice |
 | 4 | [ ] Reviews page + author pages for Rowayne and Brett | [ ] How to get more Google reviews without breaking AHPRA rules | [ ] Can dentists use testimonials in Australia? |
 | 5 | [ ] Dental marketing cost (/dental-marketing-cost.html) | [ ] How much should a dental practice spend on marketing? | [ ] What you should get for a dental SEO retainer |
