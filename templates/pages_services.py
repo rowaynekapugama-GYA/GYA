@@ -208,3 +208,103 @@ add(slug="dental-google-ads.html",
     nav="dental-marketing.html",
     schema=[{"@type": "Service", "name": "Dental Google Ads", "provider": ORG, "serviceType": "Google Ads for dentists, dental PPC, dental Google Ads management", "areaServed": "AU"}, ADS_FAQ_S],
     body=dental_google_ads_body)
+
+# ================= MISSED CALL TEXT BACK (SmileOX) =================
+MCT_FAQ, MCT_FAQ_S = faq([
+ ("What is missed call text back?", "When someone rings your practice and nobody picks up, they get a text within seconds asking how we can help. They reply to you, instead of ringing the next practice on their list."),
+ ("Won't an automatic text annoy people?", "Not when it reads like a person wrote it. SmileOX answers the obvious questions and hands straight over to your team the moment a human is needed. Nobody gets stuck in a loop."),
+ ("Does it work after hours and on weekends?", "Yes. It runs 24/7, so the call that comes in at 7pm on a Saturday gets the same reply as one at 10am on a Tuesday."),
+ ("Does it replace my front desk?", "No, it backs them up. Calls get missed because your team is busy with the patients in front of them. The text buys them time, and the lead is waiting in a ranked list when they're free."),
+ ("Can I use it if another agency runs my ads?", "Yes. SmileOX sits in front of whatever is producing your enquiries, whoever runs it."),
+ ("Is it included with GYA marketing?", "Yes. SmileOX comes with every GYA marketing engagement. It also runs on its own if you only want the follow-up side."),
+])
+
+def missed_call_body(R):
+    crumbs = [("Home", "index.html"), ("SmileOX", "smileox.html"), ("Missed call text back", "smileox-missed-call-text-back.html")]
+    return f"""
+<section class="page-hero"><div class="wrap">
+  {crumbs_html(R, crumbs)}
+  <p class="eyebrow">SmileOX · Missed call text back</p>
+  <h1 style="margin-top:22px">Missed a call? They get a text within seconds, so they reply to you instead of <span class="u">the next practice</span>.</h1>
+  <p class="lead">That's missed call text back. Someone rings, nobody can get to the phone, and SmileOX sends them a text asking how we can help. Replying to a text is easier than leaving a voicemail, and once they've replied, they're talking to you. Not ringing down the list.</p>
+  <p class="muted" style="margin-top:14px">Part of SmileOX, the lead platform we built and run for our clinics. Not someone else's software with our logo on it.</p>
+  <div class="hero-actions">{CALL}<a class="btn ghost" href="#how">How it works</a></div>
+</div></section>
+
+<section class="section tight" id="how"><div class="wrap">
+  <div class="grid g3" style="margin-bottom:clamp(40px,6vw,80px)">
+    <div class="stat reveal"><strong>&lt;60s</strong><span>first response to a new lead</span></div>
+    <div class="stat reveal"><strong>24/7</strong><span>weekends and after hours included</span></div>
+    <div class="stat reveal"><strong>14 days</strong><span>of follow-up for people not ready yet</span></div>
+  </div>
+  <p class="eyebrow reveal" style="margin-bottom:18px">What happens after a missed call</p>
+  {steps([
+   ("1. The call rings out", "It happens in every practice. Someone's at the counter paying, the dentist needs a hand, it's lunch, or it's 6:15 and the lights are off.",
+    ["None of that is your team doing anything wrong. There's one phone and a lot going on."]),
+   ("2. A text goes out within seconds", "Before they've had a chance to look up another practice, they've got a message from yours.",
+    ["It's short and friendly, it asks how we can help, and it's sent from your practice. It doesn't push an offer or make promises. It just starts the conversation."]),
+   ("3. SmileOX picks up the reply", "When people text back, it's usually with what they need: a check-up, a sore tooth, a question about Invisalign.",
+    ["SmileOX answers the simple stuff, like hours and how to book, and asks the questions your team would ask. If someone needs a person, it hands straight over."]),
+   ("4. Your team gets a ranked list", "Every lead is scored hot, warm or cool, so your front desk knows who to call back first.",
+    ["They open one list in order of value instead of a pile of voicemails, and they ring the people ready to book while those people still want to."]),
+   ("5. Not ready yet? They're not forgotten", "Plenty of people ring to ask a question and aren't booking today.",
+    ["They go into a 14-day follow-up sequence for the treatment they asked about, so an implant question gets implant answers. Most practices never speak to these people again."]),
+   ("6. You see what the missed calls were worth", "This is the bit practices usually find most surprising.",
+    ["Because SmileOX sees both the enquiry and the booking, you can finally see how many missed calls turned into booked patients, and which ads or listings they came from."]),
+  ])}
+</div></section>
+
+<section class="section dark"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">Why it matters</p><h2 style="margin-top:18px">Every clinic misses calls. Most never find out what they were worth.</h2></div>
+    <div class="reveal">
+      <p class="lead">A voicemail is easy to ignore. A missed call with no follow-up looks, from the patient's side, exactly like a practice that doesn't want them.</p>
+      <p style="margin-top:18px">People looking for a dentist usually have a few names in mind. If you don't answer, the next one might. The text closes that gap without your team having to stop what they're doing. And if you're paying for Google Ads, a missed call is a click you've already paid for. <a class="link" href="{R}dental-google-ads.html">How we run Google Ads for dentists</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">Where the calls come from</p><h2 style="margin-top:18px">It works on every line, not just one campaign.</h2></div>
+    <div class="reveal">
+      <p class="lead">Calls from your Google Ads, your map listing and your website all land in the same place. So do forms, Meta lead forms, Instagram DMs and email.</p>
+      <p style="margin-top:18px">That matters because your map listing has a call button on it, so plenty of calls never touch your ads at all. Getting found is the first half. <a class="link" href="{R}dental-seo.html">How we do dental SEO</a>. Answering is the second half, and that's what SmileOX is for. <a class="link" href="{R}smileox.html">See everything SmileOX does</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section tight"><div class="wrap">
+  <div class="grid g2">
+    <div class="card reveal"><h3>What you get</h3><ul>
+      <li>A text back within seconds on every missed call, day or night</li>
+      <li>Replies handled, with a hand-over to your team when it needs a person</li>
+      <li>Every lead scored hot, warm or cool</li>
+      <li>14-day follow-up for people who aren't ready to book yet</li>
+      <li>Reporting on booked patients, not just calls</li>
+    </ul></div>
+    <div class="card reveal"><h3>What it won't do</h3><ul>
+      <li>Trap people in a bot conversation when they want a human</li>
+      <li>Replace your front desk</li>
+      <li>Send offers or promises your practice hasn't signed off</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="sticky reveal"><p class="eyebrow">Straight answers</p><h2 style="margin-top:18px">Questions dentists ask about missed call text back.</h2></div>
+    <div class="reveal">{MCT_FAQ}</div>
+  </div>
+</div></section>
+{author_section(R)}
+{cta("Empty books give us anxiety. Genuinely.", "If you've got no idea how many calls you missed last week, call us. Twenty minutes, no pitch, just a look at where your enquiries are going and what we'd do about it.", R=R)}
+"""
+
+add(slug="smileox-missed-call-text-back.html",
+    title="Missed Call Text Back for Dentists | SmileOX by GYA",
+    desc="Missed call text back for dental practices. Every unanswered call gets a text within seconds, day or night, so patients reply to you, not the next practice.",
+    crumbs=[("Home", "index.html"), ("SmileOX", "smileox.html"), ("Missed call text back", "smileox-missed-call-text-back.html")],
+    nav="smileox.html",
+    schema=[{"@type": "Service", "name": "Missed call text back for dental practices", "provider": ORG, "serviceType": "Missed call text back, dental lead follow up", "areaServed": "AU", "isRelatedTo": {"@type": "SoftwareApplication", "name": "SmileOX"}}, MCT_FAQ_S],
+    body=missed_call_body)
