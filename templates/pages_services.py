@@ -208,3 +208,104 @@ add(slug="dental-google-ads.html",
     nav="dental-marketing.html",
     schema=[{"@type": "Service", "name": "Dental Google Ads", "provider": ORG, "serviceType": "Google Ads for dentists, dental PPC, dental Google Ads management", "areaServed": "AU"}, ADS_FAQ_S],
     body=dental_google_ads_body)
+
+# ================= AI SEARCH FOR DENTISTS =================
+AI_FAQ, AI_FAQ_S = faq([
+ ("How do I get my dental practice to show up in ChatGPT?", "Make it easy for the assistant to be sure about you. Your name, address, phone and treatments need to match everywhere you're listed, each treatment needs its own page that answers patient questions plainly in the first lines, the code on your site should spell out what you do and where, and you need a steady flow of real reviews."),
+ ("Can you guarantee ChatGPT or Google's AI will recommend my practice?", "No, and nobody honestly can. Nobody controls what an AI assistant says. What we can do is fix the things that make a practice easy to recommend, then check how the assistants describe you and keep fixing what they get wrong."),
+ ("Is AI search different from dental SEO?", "Less than people think. Most of the work is the same: an accurate map listing, a page for every treatment, clean technical structure and real reviews. The difference is in how the pages are written, with the answer up top where an assistant can quote it."),
+ ("How long does it take?", "The foundations go in during your first week with us, on day three. How quickly each assistant picks up the changes varies, so we won't put a date on it. We check how they describe you as we go."),
+ ("Can AI answers about my practice break AHPRA rules?", "The content we write for your site follows AHPRA's advertising guidelines, so what the assistants pick up from it does too. No testimonials about clinical care and nothing that sets up unreasonable expectations."),
+ ("Will you do this for my competitor?", "Not if they're a dental practice within 7km of you."),
+])
+
+def ai_search_dentists_body(R):
+    crumbs = [("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("AI search for dentists", "ai-search-for-dentists.html")]
+    return f"""
+<section class="page-hero"><div class="wrap">
+  {crumbs_html(R, crumbs)}
+  <p class="eyebrow">AI search for dentists</p>
+  <h1 style="margin-top:22px">When a patient asks ChatGPT for a dentist, the practice it names is the one it's <span class="u">most sure about</span>.</h1>
+  <p class="lead">Getting your practice named by ChatGPT, Perplexity or Google's AI comes down to four things. Your details match everywhere. Each treatment has its own page. Those pages answer what patients ask in the first lines. And you've got a steady flow of real reviews. None of it is expensive. It's just done, or it isn't.</p>
+  <p class="muted" style="margin-top:14px">We do this for more than 100 dental clinics across Australia.</p>
+  <div class="hero-actions">{CALL}<a class="btn ghost" href="#how">What we fix</a></div>
+</div></section>
+
+<section class="section tight" id="how"><div class="wrap">
+  <div class="grid g3" style="margin-bottom:clamp(40px,6vw,80px)">
+    <div class="stat reveal"><strong>100+</strong><span>dental clinics we manage</span></div>
+    <div class="stat reveal"><strong>Day 3</strong><span>AI search foundations go in, week one</span></div>
+    <div class="stat reveal"><strong>7km</strong><span>minimum gap between our dental clients</span></div>
+  </div>
+  <p class="eyebrow reveal" style="margin-bottom:18px">What we fix, in this order</p>
+  {steps([
+   ("1. Your details, matching everywhere", "If your website says one phone number and a directory says another, an assistant is less sure which is right. Less sure means less likely to name you.",
+    ["We line up your practice name, address, phone, hours and treatments across your site, your Google listing and every directory you're on. It's the same job that lifts you on the map, so it pays twice."]),
+   ("2. A page for every treatment", "An assistant can't recommend you for implants if your site only mentions them in a list.",
+    ["Implants, Invisalign, emergency, check-ups and whatever else you want more of each get a page that says plainly what it is, who it's for and how to book. Actual treatments and actual suburbs, in plain words."]),
+   ("3. The answer in the first lines", "Patients don't type \"dentist Caringbah\" into ChatGPT. They ask whether they need a crown or a filling, or whether anyone can see them today.",
+    ["So we write your pages the way those questions get asked, with the answer up top. That's the part an assistant quotes. Everything is written to AHPRA's advertising guidelines, so nothing sets up expectations it shouldn't."]),
+   ("4. The code underneath", "Structured data, or schema, is code on your site that spells out for machines what you do, where you are and when you're open.",
+    ["Most patients will never see it. Google and the AI tools read it on every visit."]),
+   ("5. Real reviews, answered", "A steady flow of genuine reviews tells Google and the AI tools that your practice is active and trusted.",
+    ["We set up a simple way for patients to leave one and help you reply to them. They stay reviews, not testimonials, which keeps you inside AHPRA's rules."]),
+   ("6. Checking what the assistants say", "This is the step most agencies skip.",
+    ["We ask the assistants the questions your patients ask, note whether you're named and how you're described, and fix the source when they get something wrong. Then we do it again, because the answers change."]),
+  ])}
+</div></section>
+
+<section class="section dark"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">Is this separate from SEO?</p><h2 style="margin-top:18px">Straight answer: mostly the same work, written a bit differently.</h2></div>
+    <div class="reveal">
+      <p class="lead">An accurate map listing, a page per treatment, clean structure and real reviews help you on Google and in AI answers at the same time.</p>
+      <p style="margin-top:18px">What changes is the writing. Pages need the answer up top, in the words a patient would use, so an assistant can lift it straight out. That's why AI search is part of how we do dental SEO, not an extra line on the invoice. <a class="link" href="{R}dental-seo.html">How we do dental SEO</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">What happens when you're named</p><h2 style="margin-top:18px">Two or three names, and the patient rings more than one.</h2></div>
+    <div class="reveal">
+      <p class="lead">An assistant usually hands someone a short list. Whoever answers first tends to get the booking.</p>
+      <p style="margin-top:18px">Every enquiry goes through SmileOX, our own lead platform. It replies to new enquiries in under 60 seconds, asks the questions your team would ask, and texts back the calls you miss. Getting named only matters if somebody answers. <a class="link" href="{R}smileox.html">See how SmileOX works</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section tight"><div class="wrap">
+  <div class="grid g2">
+    <div class="card reveal"><h3>What you get</h3><ul>
+      <li>Your practice details matching everywhere they appear</li>
+      <li>A page for each treatment, written so an assistant can quote it</li>
+      <li>Schema on your site that spells out what you do and where</li>
+      <li>Regular checks on how the AI assistants describe you</li>
+      <li>A call every fortnight to look at the numbers together</li>
+    </ul></div>
+    <div class="card reveal"><h3>What we won't do</h3><ul>
+      <li>Promise you'll be named. Nobody controls what an assistant says</li>
+      <li>Take on another dental clinic within 7km of you</li>
+      <li>Write content that breaks AHPRA's advertising rules</li>
+    </ul></div>
+  </div>
+  <p class="muted reveal" style="margin-top:28px">Want to check where you stand first? <a class="link" href="{R}blog/ai-search-for-local-businesses.html">Here's a simple test you can run today</a>. Or read <a class="link" href="{R}ai-marketing.html">how we think about AI marketing</a> more broadly.</p>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="sticky reveal"><p class="eyebrow">Straight answers</p><h2 style="margin-top:18px">Questions dentists ask about AI search.</h2></div>
+    <div class="reveal">{AI_FAQ}</div>
+  </div>
+</div></section>
+{author_section(R)}
+{cta("Right now, an AI is recommending a dentist in your suburb.", "It might be you. Call us and in twenty minutes we'll show you what the assistants say about your practice, and what we'd fix first. No pitch.", R=R)}
+"""
+
+add(slug="ai-search-for-dentists.html",
+    title="AI Search for Dentists | Get Named by ChatGPT and Google AI | GYA",
+    desc="How to get your dental practice named when patients ask ChatGPT, Perplexity or Google's AI. Matching details, treatment pages, schema and real reviews.",
+    crumbs=[("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("AI search for dentists", "ai-search-for-dentists.html")],
+    nav="dental-marketing.html",
+    schema=[{"@type": "Service", "name": "AI search for dentists", "provider": ORG, "serviceType": "AI search optimisation for dental practices, AI SEO for dentists", "areaServed": "AU"}, AI_FAQ_S],
+    body=ai_search_dentists_body)
