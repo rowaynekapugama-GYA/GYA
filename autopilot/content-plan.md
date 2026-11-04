@@ -17,7 +17,7 @@ Start: week of 19 October 2026. Each line shows `[ ]` until the item is live, th
 | 9 | [ ] Orthodontist marketing | [ ] Marketing an orthodontic practice to parents | [ ] Invisalign marketing that stays within the rules |
 | 10 | [ ] Implant clinic marketing | [ ] Why implant enquiries need a different follow-up | [ ] Google Ads for dental implants: what works |
 | 11 | [ ] Dental marketing Melbourne (real Victorian clients only) | [ ] SmileOX data post: reply speed and booking rates | [ ] How to choose a dental marketing agency |
-| 12 | [ ] Dental marketing Brisbane (real Queensland clients only) | [ ] Unaccepted treatment plans: the cheapest bookings you'll get | [ ] What 7km exclusivity means for your practice |
+| 12 | [ ] Dental marketing Brisbane (real Queensland clients only) | [ ] Unaccepted treatment plans: the cheapest bookings you'll get | [x] What 7km exclusivity means for your practice, PR 17 |
 
 ## Rules for every item
 
