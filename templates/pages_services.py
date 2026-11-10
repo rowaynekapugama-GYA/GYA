@@ -208,3 +208,103 @@ add(slug="dental-google-ads.html",
     nav="dental-marketing.html",
     schema=[{"@type": "Service", "name": "Dental Google Ads", "provider": ORG, "serviceType": "Google Ads for dentists, dental PPC, dental Google Ads management", "areaServed": "AU"}, ADS_FAQ_S],
     body=dental_google_ads_body)
+
+# ================= DENTAL META ADS =================
+META_FAQ, META_FAQ_S = faq([
+ ("Do Facebook and Instagram ads work for dentists?", "Yes, for the right treatments. They work best for things people think about before they book, like cosmetic work, ortho and other high value treatments. For a toothache at 7am, Google is where people go, so that budget belongs in search."),
+ ("Should I run Meta ads or Google Ads?", "Usually both, doing different jobs. Search catches patients who have already decided. Social is where the deciding happens. We put each treatment where its patients actually are."),
+ ("Do I need professional video for my ads?", "You need real video, not stock. We shoot the creative at your clinic, so the ad looks like your practice and your team. That happens on day five of our first week with you."),
+ ("What happens when someone fills in a Meta lead form?", "It goes straight into SmileOX, along with Instagram DMs. SmileOX replies in under 60 seconds, asks the questions your team would ask, and keeps following up with the ones who aren't ready yet."),
+ ("Can my ads include a special offer?", "Only with clear terms. AHPRA's advertising rules don't allow offers without them, and we check every ad against those rules before it runs."),
+ ("Will you run Meta ads for my competitor?", "Not if they're a dental practice within 7km of you."),
+])
+
+def dental_meta_ads_body(R):
+    crumbs = [("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("Dental Meta ads", "dental-meta-ads.html")]
+    return f"""
+<section class="page-hero"><div class="wrap">
+  {crumbs_html(R, crumbs)}
+  <p class="eyebrow">Facebook and Instagram ads for dentists</p>
+  <h1 style="margin-top:22px">Meta ads for dentists, for the treatments people <span class="u">think about first</span>.</h1>
+  <p class="lead">Facebook and Instagram ads work for dental practices when they're pointed at the right treatments. Cosmetic work, ortho and other high value treatments are decisions people sit on for a while, and social is where that deciding happens. We run video-led campaigns for those, shot at your clinic, and every lead goes straight into SmileOX so it gets a reply in under a minute.</p>
+  <p class="muted" style="margin-top:14px">We manage marketing for more than 100 dental clinics across Australia.</p>
+  <div class="hero-actions">{CALL}<a class="btn ghost" href="#how">How we run them</a></div>
+</div></section>
+
+<section class="section tight" id="how"><div class="wrap">
+  <div class="grid g3" style="margin-bottom:clamp(40px,6vw,80px)">
+    <div class="stat reveal"><strong>100+</strong><span>dental clinics we manage</span></div>
+    <div class="stat reveal"><strong>Day 6</strong><span>your Meta ads go live in week one</span></div>
+    <div class="stat reveal"><strong>Under 60s</strong><span>first reply to a new lead through SmileOX</span></div>
+  </div>
+  <p class="eyebrow reveal" style="margin-bottom:18px">How we run Meta ads for a practice</p>
+  {steps([
+   ("1. Pick the treatments that suit social", "Not everything belongs on Instagram, and pretending it does wastes money.",
+    ["Cosmetic, ortho and high value treatments get Meta campaigns, because people mull those over and scroll while they do. Emergency and check-ups stay on Google, where people search when they need you now."]),
+   ("2. Shoot the creative at your clinic", "A stock photo of a stranger's smile tells a patient nothing about you.",
+    ["On day five of our first week, we create video and stills at your practice: your rooms, your team, your front desk. So when someone finally walks in, it already looks familiar."]),
+   ("3. Show it to the right people nearby", "Patients book close to home, so the ads stay close to home too.",
+    ["We build audiences around your area and your real patient base, then retarget people who've already looked at your site. Someone who read your Invisalign page last week sees your Invisalign ad this week."]),
+   ("4. Catch every lead the moment it lands", "Meta leads go cold faster than any other kind. They tapped a form between two videos and moved on.",
+    [f"Lead forms and Instagram DMs all go into SmileOX, our own lead platform. It replies in under 60 seconds, asks the questions your team would ask, scores the lead hot, warm or cool, and runs a 14-day follow-up for the people not ready yet. <a class=\"link\" href=\"{R}smileox.html\">See how SmileOX works</a>."]),
+   ("5. Written to AHPRA's rules", "Every ad is checked against the AHPRA advertising guidelines before it runs.",
+    ["No testimonials about clinical care, nothing that sets up unreasonable expectations, and no offers without clear terms. Social ads get shared and screenshotted, so getting this right matters even more."]),
+   ("6. Judged on booked patients", "Likes and reach are easy to buy. They don't pay for a chair.",
+    ["We track which campaigns turn into booked appointments, then look at the numbers with you on a call every fortnight and move the budget to what's working."]),
+  ])}
+</div></section>
+
+<section class="section dark"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">Meta or Google Ads?</p><h2 style="margin-top:18px">Straight answer: they do different jobs.</h2></div>
+    <div class="reveal">
+      <p class="lead">Search catches patients who have already decided. Social creates the decision.</p>
+      <p style="margin-top:18px">That's why cosmetic and ortho belong on Instagram, and emergency doesn't. Most of our clients run both: Google for the people searching today, Meta for the people who'll be ready in a month. <a class="link" href="{R}dental-google-ads.html">How we run Google Ads for dentists</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">Where the ads send people</p><h2 style="margin-top:18px">The ad is only the start.</h2></div>
+    <div class="reveal">
+      <p class="lead">Someone who taps an ad for clear aligners and lands on your homepage usually leaves.</p>
+      <p style="margin-top:18px">So every campaign sends people to a page about the treatment they were shown, with a simple way to book or ask a question. If those pages don't exist yet, we build them. <a class="link" href="{R}dental-websites.html">More on dental websites</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section tight"><div class="wrap">
+  <div class="grid g2">
+    <div class="card reveal"><h3>What you get</h3><ul>
+      <li>Video and stills shot at your clinic, not stock</li>
+      <li>Campaigns for the treatments that suit social</li>
+      <li>Every lead form and DM answered through SmileOX</li>
+      <li>A call every fortnight to look at the numbers together</li>
+    </ul></div>
+    <div class="card reveal"><h3>What we won't do</h3><ul>
+      <li>Run ads for another dental clinic within 7km of you</li>
+      <li>Report on likes and reach and call it a result</li>
+      <li>Spend your budget marketing ourselves</li>
+      <li>Write ads that break AHPRA's advertising rules</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="sticky reveal"><p class="eyebrow">Straight answers</p><h2 style="margin-top:18px">Questions dentists ask about Facebook and Instagram ads.</h2></div>
+    <div class="reveal">{META_FAQ}</div>
+  </div>
+</div></section>
+{author_section(R)}
+{cta("Empty books give us anxiety. Genuinely.", "If you've tried boosting posts and got likes instead of bookings, call us. Twenty minutes, no pitch, just a look at what you're running and what we'd change.", R=R)}
+"""
+
+add(slug="dental-meta-ads.html",
+    title="Facebook and Instagram Ads for Dentists | Dental Meta Ads | GYA",
+    desc="Facebook and Instagram ads for dentists: video shot at your clinic, aimed at cosmetic and ortho, with every lead answered by SmileOX in under 60 seconds.",
+    crumbs=[("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("Dental Meta ads", "dental-meta-ads.html")],
+    nav="dental-marketing.html",
+    schema=[{"@type": "Service", "name": "Dental Meta ads", "provider": ORG, "serviceType": "Facebook ads for dentists, Instagram ads for dental practices, dental Facebook advertising", "areaServed": "AU"}, META_FAQ_S],
+    body=dental_meta_ads_body)
