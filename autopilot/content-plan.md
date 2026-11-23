@@ -7,17 +7,17 @@ Start: week of 19 October 2026. Each line shows `[ ]` until the item is live, th
 | Week | Wednesday page | Tuesday post | Thursday post |
 | --- | --- | --- | --- |
 | 1 | [x] Dental SEO (/dental-seo.html), live via PR 1 | [x] How to rank a dental practice on Google Maps, PR 7 | [x] Why your practice ranks for its name and nothing else, PR 10 |
-| 2 | [x] Dental Google Ads (/dental-google-ads.html), PR 8 | [ ] Why implant ads and check-up ads shouldn't share a budget | [ ] The negative keywords every dental Google Ads account needs |
-| 3 | [ ] SmileOX restructure + Missed-call text-back page | [ ] How fast should a dental practice reply to an enquiry? | [ ] What a missed call actually costs a dental practice |
-| 4 | [ ] Reviews page + author pages for Rowayne and Brett | [ ] How to get more Google reviews without breaking AHPRA rules | [ ] Can dentists use testimonials in Australia? |
-| 5 | [ ] Dental marketing cost (/dental-marketing-cost.html) | [ ] How much should a dental practice spend on marketing? | [ ] What you should get for a dental SEO retainer |
-| 6 | [ ] AI search for dentists (/ai-search-for-dentists.html) | [ ] How patients ask AI for a dentist (and what it answers) | [ ] Five fixes that help AI assistants recommend your practice |
+| 2 | [x] Dental Google Ads (/dental-google-ads.html), PR 8 | [ ] Why implant ads and check-up ads shouldn't share a budget, PR 11 waiting to merge | [ ] The negative keywords every dental Google Ads account needs, PR 13 waiting to merge |
+| 3 | [ ] SmileOX restructure + Missed-call text-back page, PR 12 waiting to merge | [ ] How fast should a dental practice reply to an enquiry? | [ ] What a missed call actually costs a dental practice |
+| 4 | [ ] Reviews page + author pages for Rowayne and Brett | [ ] How to get more Google reviews without breaking AHPRA rules | [ ] What 7km exclusivity means for your practice |
+| 5 | [ ] AI search for dentists (/ai-search-for-dentists.html) | [ ] How patients ask AI for a dentist (and what it answers) | [ ] Five fixes that help AI assistants recommend your practice |
+| 6 | [ ] Dental marketing cost (/dental-marketing-cost.html), waits on price ranges (open question 2) | [ ] How much should a dental practice spend on marketing? | [ ] What you should get for a dental SEO retainer |
 | 7 | [ ] Dental Meta ads (/dental-meta-ads.html) | [ ] Why cosmetic and ortho belong on Instagram, and emergency doesn't | [ ] Shooting ad creative in your own clinic |
 | 8 | [ ] Dental websites expanded, client dashboard section | [ ] What a dental website needs before you send ads to it | [ ] Why your website should let you change it yourself |
 | 9 | [ ] Orthodontist marketing | [ ] Marketing an orthodontic practice to parents | [ ] Invisalign marketing that stays within the rules |
 | 10 | [ ] Implant clinic marketing | [ ] Why implant enquiries need a different follow-up | [ ] Google Ads for dental implants: what works |
 | 11 | [ ] Dental marketing Melbourne (real Victorian clients only) | [ ] SmileOX data post: reply speed and booking rates | [ ] How to choose a dental marketing agency |
-| 12 | [ ] Dental marketing Brisbane (real Queensland clients only) | [ ] Unaccepted treatment plans: the cheapest bookings you'll get | [ ] What 7km exclusivity means for your practice |
+| 12 | [ ] Dental marketing Brisbane (real Queensland clients only) | [ ] Unaccepted treatment plans: the cheapest bookings you'll get | [ ] Can dentists use testimonials in Australia? |
 
 ## Rules for every item
 
@@ -28,3 +28,10 @@ Start: week of 19 October 2026. Each line shows `[ ]` until the item is live, th
 - Named author, date, and Article or Service schema.
 - City pages wait until Rowayne has cleared at least two client names in that city.
 - Week 11's SmileOX data post waits for the SmileOX export. If it hasn't arrived, swap in a later post.
+
+## Changes from the October monthly report (1 November 2026)
+
+- Weeks 5 and 6 swapped. AI search for dentists moves up to week 5, because the AI prompt test found nobody Australian answering "how do I get my practice to show up in ChatGPT" (the results are all US agencies). The cost page moves to week 6 because it needs the price ranges in open question 2, which haven't come back yet. If they still haven't arrived by week 6, keep the page to the 3% to 8% guidance in facts.md and leave prices out.
+- "What 7km exclusivity means for your practice" moves from week 12 to week 4 Thursday, swapping with "Can dentists use testimonials in Australia?". The prompt "Which dental marketing agencies won't work with my competitor?" only brings up generic US how-to-choose articles, so the 7km rule is an open gap only GYA can fill. The testimonials question is already well answered by AHPRA, the ADA and Dental Protection, so it can wait. Week 4 keeps an AHPRA reviews post alongside the Reviews page.
+- Week 2 posts and the week 3 page are built and sitting in PRs 11, 12 and 13. They stay unticked until merged.
+- No page-two queries yet: Search Console isn't connected in Windsor.ai, so there's no query data to act on. Revisit once it is.
