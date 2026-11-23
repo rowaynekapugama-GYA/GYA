@@ -27,7 +27,7 @@ class P(HTMLParser):
 pages={}
 for root,_,files in os.walk(D):
     for f in files:
-        if f.endswith(".html"):
+        if f.endswith(".html") and not re.fullmatch(r"google[0-9a-f]+\.html", f):  # Search Console verification file
             path=os.path.join(root,f); rel=os.path.relpath(path,D)
             p=P(); txt=open(path,encoding="utf-8").read(); p.feed(txt); p.txt=txt; pages[rel]=p
 errors=[]
