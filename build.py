@@ -251,6 +251,7 @@ def foot(R):
         <li><a href="{R}dental-marketing.html">Dental marketing</a></li>
         <li><a href="{R}dental-seo.html">Dental SEO</a></li>
         <li><a href="{R}dental-google-ads.html">Dental Google Ads</a></li>
+        <li><a href="{R}ai-search-for-dentists.html">AI search for dentists</a></li>
         <li><a href="{R}dental-websites.html">Dental websites</a></li>
         <li><a href="{R}smileox.html">SmileOX</a></li>
         <li><a href="{R}marketing.html">Marketing for all industries</a></li>
