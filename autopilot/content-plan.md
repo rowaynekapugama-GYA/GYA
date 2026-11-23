@@ -12,7 +12,7 @@ Start: week of 19 October 2026. Each line shows `[ ]` until the item is live, th
 | 4 | [ ] Reviews page + author pages for Rowayne and Brett | [ ] How to get more Google reviews without breaking AHPRA rules | [ ] Can dentists use testimonials in Australia? |
 | 5 | [ ] Dental marketing cost (/dental-marketing-cost.html) | [ ] How much should a dental practice spend on marketing? | [ ] What you should get for a dental SEO retainer |
 | 6 | [ ] AI search for dentists (/ai-search-for-dentists.html) | [ ] How patients ask AI for a dentist (and what it answers) | [ ] Five fixes that help AI assistants recommend your practice |
-| 7 | [ ] Dental Meta ads (/dental-meta-ads.html) | [ ] Why cosmetic and ortho belong on Instagram, and emergency doesn't | [ ] Shooting ad creative in your own clinic |
+| 7 | [x] Dental Meta ads (/dental-meta-ads.html), PR 19 | [ ] Why cosmetic and ortho belong on Instagram, and emergency doesn't | [ ] Shooting ad creative in your own clinic |
 | 8 | [ ] Dental websites expanded, client dashboard section | [ ] What a dental website needs before you send ads to it | [ ] Why your website should let you change it yourself |
 | 9 | [ ] Orthodontist marketing | [ ] Marketing an orthodontic practice to parents | [ ] Invisalign marketing that stays within the rules |
 | 10 | [ ] Implant clinic marketing | [ ] Why implant enquiries need a different follow-up | [ ] Google Ads for dental implants: what works |
