@@ -208,3 +208,103 @@ add(slug="dental-google-ads.html",
     nav="dental-marketing.html",
     schema=[{"@type": "Service", "name": "Dental Google Ads", "provider": ORG, "serviceType": "Google Ads for dentists, dental PPC, dental Google Ads management", "areaServed": "AU"}, ADS_FAQ_S],
     body=dental_google_ads_body)
+
+# ================= IMPLANT CLINIC MARKETING =================
+IMPLANT_FAQ, IMPLANT_FAQ_S = faq([
+ ("How is marketing an implant clinic different from general dental marketing?", "An implant patient is worth far more than a check-up patient and takes far longer to decide. So implants get their own pages, their own Google Ads campaign and budget, and follow-up that keeps going for weeks instead of one reply and done."),
+ ("How long does it take to rank for \"dental implants\"?", "It's one of the most competitive terms in dentistry. It usually takes 4 to 9 months. Google Ads can bring in implant enquiries within days, so most clinics run ads while the SEO builds."),
+ ("Should implant ads share a budget with our other ads?", "No. If implants and check-ups share a campaign, the cheaper, more common searches quietly use up the money meant for implants. Implants get a campaign and a budget of their own."),
+ ("Can we call ourselves implant specialists?", "Only if the practitioner holds a specialist registration that allows it. Specialist titles are restricted under AHPRA's rules. If you're a dentist who places implants, we'll say exactly that, and lead with your training and experience instead."),
+ ("Can we advertise a price or a payment plan for implants?", "Only with clear terms. AHPRA's rules don't allow offers without them, so anything about price or payments says exactly what's included and who it applies to before it goes anywhere near an ad."),
+ ("Will you work with another implant clinic near us?", "Not if they're a dental practice within 7km of you."),
+])
+
+def implant_clinic_marketing_body(R):
+    crumbs = [("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("Implant clinic marketing", "implant-clinic-marketing.html")]
+    return f"""
+<section class="page-hero"><div class="wrap">
+  {crumbs_html(R, crumbs)}
+  <p class="eyebrow">Implant clinic marketing</p>
+  <h1 style="margin-top:22px">Implant marketing for patients who ask about cost first and book <span class="u">weeks later</span>.</h1>
+  <p class="lead">An implant enquiry is a big one, for you and for them. They'll want to know what it costs, who's doing it, and whether it'll work for them, and most won't book on the day they ask. So we give implants their own pages, their own ad budget and their own follow-up, put the practitioner's training up front, and keep the conversation going until they're ready for a consult.</p>
+  <p class="muted" style="margin-top:14px">We manage marketing for more than 100 dental clinics across Australia.</p>
+  <div class="hero-actions">{CALL}<a class="btn ghost" href="#how">How we do it</a></div>
+</div></section>
+
+<section class="section tight" id="how"><div class="wrap">
+  <div class="grid g3" style="margin-bottom:clamp(40px,6vw,80px)">
+    <div class="stat reveal"><strong>100+</strong><span>dental clinics we manage</span></div>
+    <div class="stat reveal"><strong>4 to 9 months</strong><span>to rank for "dental implants", usually</span></div>
+    <div class="stat reveal"><strong>14 days</strong><span>of follow-up for enquiries not ready yet</span></div>
+  </div>
+  <p class="eyebrow reveal" style="margin-bottom:18px">How we market implants</p>
+  {steps([
+   ("1. Implants get their own budget", "This is the one we see go wrong most. Implants sit in the same campaign as check-ups and cleans, and the cheaper searches eat the money.",
+    [f"Implants get a Google Ads campaign of their own, with their own budget and their own suburbs, and negative keyword lists from day one so the money isn't spent on people looking for courses, jobs or overseas trips. <a class=\"link\" href=\"{R}dental-google-ads.html\">How we run dental Google Ads</a>."]),
+   ("2. A page for each kind of implant search", "\"Single tooth implant\", \"full arch implants\" and \"implants or dentures\" are different people with different questions.",
+    ["Each one gets a page that answers what they're actually worried about: what's involved, roughly how long it takes from first visit to finished, how payment works at your practice, and how to book a consult. Every ad click lands on the page about the thing they searched for."]),
+   ("3. The practitioner up front", "Someone choosing who puts an implant in their jaw wants to know who that person is.",
+    ["So the practitioner's training, experience and team sit at the top of the page and in the ads, with real photos taken at your practice. If someone holds a specialist registration, we lead with it. If not, we describe exactly what they do, and the specialist title stays out of it."]),
+   ("4. SEO for the long game", "\"Dental implants\" is one of the hardest terms to rank for in dentistry, and it usually takes 4 to 9 months.",
+    [f"We start the treatment pages, map listing and technical work in week one so the ads can ease off as the organic rankings come in. <a class=\"link\" href=\"{R}dental-seo.html\">How we do dental SEO</a>."]),
+   ("5. Follow-up as long as the decision", "Most implant enquiries are a question, not a booking.",
+    [f"SmileOX, our own lead platform, replies to every enquiry in under 60 seconds, asks the questions your team would ask, and scores it hot, warm or cool. The hot ones go straight to your team. The rest get 14 days of follow-up that answers cost and process questions, so nobody slips away just because they weren't ready on a Tuesday. <a class=\"link\" href=\"{R}smileox.html\">See how SmileOX works</a>."]),
+   ("6. Checked against AHPRA's rules", "Results, prices and reviews are where implant advertising most often gets into trouble.",
+    ["Every ad and page is checked against the AHPRA advertising guidelines before it goes live: no testimonials about clinical care, nothing that sets up unreasonable expectations about the result, and no price or payment offers without clear terms."]),
+  ])}
+</div></section>
+
+<section class="section dark"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">Why it's a different job</p><h2 style="margin-top:18px">One implant patient isn't one check-up patient.</h2></div>
+    <div class="reveal">
+      <p class="lead">A check-up is booked in a minute. An implant is a decision about money, time and their own mouth, and it can sit with someone for weeks before they ring.</p>
+      <p style="margin-top:18px">That changes how you judge the marketing. An implant campaign can look slow on clicks and still be your best spend, because the number that matters is consults booked and treatment going ahead, not this week's enquiries. That's what we report on, and what we talk through on our call every fortnight. <a class="link" href="{R}dental-marketing.html">See everything we do for dentists</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">After the consult</p><h2 style="margin-top:18px">The patient who said "let me think about it".</h2></div>
+    <div class="reveal">
+      <p class="lead">Plenty of implant patients come in, hear the plan, and go home to think. Some of them never hear from the practice again.</p>
+      <p style="margin-top:18px">We set the follow-up up so those people get a friendly nudge and a chance to ask the questions they didn't ask in the chair, and your team knows who's warming up. It's often the cheapest booking a practice can get, because they've already found you, met you and been through the consult.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section tight"><div class="wrap">
+  <div class="grid g2">
+    <div class="card reveal"><h3>What you get</h3><ul>
+      <li>An implant campaign with its own budget and suburbs</li>
+      <li>Pages for the implant searches your patients actually make</li>
+      <li>Every enquiry answered fast and followed up if they're not ready</li>
+      <li>Reporting on booked consults, and a call every fortnight</li>
+    </ul></div>
+    <div class="card reveal"><h3>What we won't do</h3><ul>
+      <li>Take on another dental practice within 7km of you</li>
+      <li>Use a specialist title for anyone who isn't registered for it</li>
+      <li>Promise results, or run price offers without clear terms</li>
+      <li>Report clicks and call it a result</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="sticky reveal"><p class="eyebrow">Straight answers</p><h2 style="margin-top:18px">Questions implant clinics ask about marketing.</h2></div>
+    <div class="reveal">{IMPLANT_FAQ}</div>
+  </div>
+</div></section>
+{author_section(R)}
+{cta("Empty chairs give us anxiety. Genuinely.", "If you're getting implant enquiries but not enough of them turn into consults, call us. Twenty minutes, no pitch, just a look at where they're dropping off and what we'd do about it.", R=R)}
+"""
+
+add(slug="implant-clinic-marketing.html",
+    title="Dental Implant Marketing | Implant Clinic Marketing Agency | GYA",
+    desc="Marketing for implant clinics: implants get their own pages, ad budget and follow-up, the practitioner leads, and every enquiry is chased until it books.",
+    crumbs=[("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("Implant clinic marketing", "implant-clinic-marketing.html")],
+    nav="dental-marketing.html",
+    schema=[{"@type": "Service", "name": "Implant clinic marketing", "provider": ORG, "serviceType": "Dental implant marketing, implant clinic marketing", "areaServed": "AU"}, IMPLANT_FAQ_S],
+    body=implant_clinic_marketing_body)

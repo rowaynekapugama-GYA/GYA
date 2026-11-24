@@ -15,7 +15,7 @@ Start: week of 19 October 2026. Each line shows `[ ]` until the item is live, th
 | 7 | [ ] Dental Meta ads (/dental-meta-ads.html) | [ ] Why cosmetic and ortho belong on Instagram, and emergency doesn't | [ ] Shooting ad creative in your own clinic |
 | 8 | [ ] Dental websites expanded, client dashboard section | [ ] What a dental website needs before you send ads to it | [ ] Why your website should let you change it yourself |
 | 9 | [ ] Orthodontist marketing | [ ] Marketing an orthodontic practice to parents | [ ] Invisalign marketing that stays within the rules |
-| 10 | [ ] Implant clinic marketing | [ ] Why implant enquiries need a different follow-up | [ ] Google Ads for dental implants: what works |
+| 10 | [x] Implant clinic marketing (/implant-clinic-marketing.html), PR 25 | [ ] Why implant enquiries need a different follow-up | [ ] Google Ads for dental implants: what works |
 | 11 | [ ] Dental marketing Melbourne (real Victorian clients only) | [ ] SmileOX data post: reply speed and booking rates | [ ] How to choose a dental marketing agency |
 | 12 | [ ] Dental marketing Brisbane (real Queensland clients only) | [ ] Unaccepted treatment plans: the cheapest bookings you'll get | [ ] What 7km exclusivity means for your practice |
 
