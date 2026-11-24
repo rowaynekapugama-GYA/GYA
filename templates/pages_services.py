@@ -208,3 +208,103 @@ add(slug="dental-google-ads.html",
     nav="dental-marketing.html",
     schema=[{"@type": "Service", "name": "Dental Google Ads", "provider": ORG, "serviceType": "Google Ads for dentists, dental PPC, dental Google Ads management", "areaServed": "AU"}, ADS_FAQ_S],
     body=dental_google_ads_body)
+
+# ================= ORTHODONTIST MARKETING =================
+ORTHO_FAQ, ORTHO_FAQ_S = faq([
+ ("Can we call ourselves orthodontists in our ads?", "If you're registered as a specialist orthodontist, yes, and we'll put it front and centre. If you're a dentist who offers orthodontic treatment, we'll say exactly that instead. The specialist title is restricted to registered specialists, and we won't use it for anyone who doesn't hold that registration."),
+ ("Should orthodontists run Google Ads or Instagram ads?", "Usually both, doing different jobs. Google catches people already searching for braces or clear aligners. Instagram and Facebook start the thought in the first place, which is why ortho suits social and emergency dentistry doesn't."),
+ ("Can we advertise a free consultation?", "Yes, as long as the terms are clear: what's included, who it's for and when it ends. AHPRA's rules don't allow offers without clear terms, so we write them into every ad and landing page before anything runs."),
+ ("Can we use patient reviews in our ads?", "Not as testimonials about clinical care. Patients can leave Google reviews and you can reply to them, but they can't be reused as promotional content in your ads or on your site."),
+ ("What happens to people who enquire but don't book?", "Ortho is a big decision, so most people aren't ready on day one. SmileOX follows them up for 14 days with answers about the treatment they asked about, including cost and payment questions, then hands them to your team when they're ready."),
+ ("Will you work with another orthodontic practice near us?", "Not if they're within 7km of you. We don't take on two dental practices within 7km of each other, and that includes orthodontists."),
+])
+
+def orthodontist_marketing_body(R):
+    crumbs = [("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("Orthodontist marketing", "orthodontist-marketing.html")]
+    return f"""
+<section class="page-hero"><div class="wrap">
+  {crumbs_html(R, crumbs)}
+  <p class="eyebrow">Orthodontist marketing</p>
+  <h1 style="margin-top:22px">Orthodontist marketing for a decision that takes <span class="u">weeks, not minutes</span>.</h1>
+  <p class="lead">Nobody books braces the way they book a check-up. A parent weighs it up for their kid, or an adult thinks about it for months, and cost comes up every time. So we lead with your credentials, give braces and clear aligners their own pages and ads, use social to start the conversation, and follow up every enquiry until they're ready to book a consult.</p>
+  <p class="muted" style="margin-top:14px">We manage marketing for more than 100 dental clinics across Australia.</p>
+  <div class="hero-actions">{CALL}<a class="btn ghost" href="#how">How we do it</a></div>
+</div></section>
+
+<section class="section tight" id="how"><div class="wrap">
+  <div class="grid g3" style="margin-bottom:clamp(40px,6vw,80px)">
+    <div class="stat reveal"><strong>100+</strong><span>dental clinics we manage</span></div>
+    <div class="stat reveal"><strong>14 days</strong><span>of follow-up for enquiries not ready yet</span></div>
+    <div class="stat reveal"><strong>7km</strong><span>minimum gap between our dental clients</span></div>
+  </div>
+  <p class="eyebrow reveal" style="margin-bottom:18px">How we market an orthodontic practice</p>
+  {steps([
+   ("1. Your credentials lead", "A specialist orthodontist has trained for years on top of a dental degree. That's the reason to choose you, so it goes first.",
+    ["Your registration, your training and the people on your team sit at the top of the site and in your ads. We only use the specialist title for practitioners who hold that registration, so it means something when patients see it."]),
+   ("2. A page for each thing people search", "\"Braces for kids\", \"clear aligners\" and \"adult braces\" are different searches from different people with different worries.",
+    [f"Each one gets its own page that answers what they actually ask: how it works, roughly how long it takes, how payment works, and how to book a consult. <a class=\"link\" href=\"{R}dental-websites.html\">More on dental websites</a>."]),
+   ("3. Google Ads per treatment and suburb", "Someone searching for clear aligners near them has already decided they want something done.",
+    [f"Braces, clear aligners and first ortho checks each get their own campaign and budget, aimed at the suburbs your patients come from, with negative keyword lists from day one. Every click lands on the page about what they searched. <a class=\"link\" href=\"{R}dental-google-ads.html\">How we run dental Google Ads</a>."]),
+   ("4. Social to start the decision", "Search catches patients who have already decided. Social creates the decision, which is why ortho belongs there.",
+    ["We shoot video at your practice, so the ad shows your rooms and your team rather than stock smiles, then show it to the parents and adults in your area who are most likely to be thinking about it."]),
+   ("5. Follow-up that matches the decision", "Most ortho enquiries aren't ready to book on the day they ask a question.",
+    [f"SmileOX, our own lead platform, replies to every enquiry in under 60 seconds, asks the questions your team would ask, and follows up for 14 days with answers about the treatment they asked about. Cost and payment questions get handled before anyone has to work up the nerve to ask. <a class=\"link\" href=\"{R}smileox.html\">See how SmileOX works</a>."]),
+   ("6. Checked against AHPRA's rules", "Smile results, free consults and reviews are where ortho advertising most often goes wrong.",
+    ["Every ad and page is checked against the AHPRA advertising guidelines before it goes live: no testimonials about clinical care, nothing that sets up unreasonable expectations about results, and no offers without clear terms."]),
+  ])}
+</div></section>
+
+<section class="section dark"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">Who's actually deciding?</p><h2 style="margin-top:18px">Often two people, and only one of them is the patient.</h2></div>
+    <div class="reveal">
+      <p class="lead">For a teenager, the parent usually finds you, asks about cost and books the consult. For an adult, it's their own call, and it's often been on their mind for a long time before they enquire.</p>
+      <p style="margin-top:18px">Those are different conversations, so they get different ads, different pages and different follow-up. A parent wants to know when to bring their child in and how payments work. An adult wants to know how it fits around work and how it'll look while it's happening. We write for each of them separately instead of one page trying to talk to both.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="reveal"><p class="eyebrow">Referring dentists</p><h2 style="margin-top:18px">Your best referrers already know your patients.</h2></div>
+    <div class="reveal">
+      <p class="lead">Plenty of ortho patients arrive because their family dentist suggested it. That relationship is worth looking after online too.</p>
+      <p style="margin-top:18px">So the site gives referring dentists what they need: who you are, what you treat, and a simple way to send a patient through. A specialist site has to work for nervous patients and for the dentists who refer them, on the same pages, without feeling like two websites stapled together. <a class="link" href="{R}dental-marketing.html">See everything we do for dentists</a>.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section tight"><div class="wrap">
+  <div class="grid g2">
+    <div class="card reveal"><h3>What you get</h3><ul>
+      <li>Pages for braces, clear aligners and kids' ortho checks</li>
+      <li>Google Ads and social ads per treatment, shot at your practice</li>
+      <li>Every enquiry answered fast, and followed up if they are not ready</li>
+      <li>Reporting on booked consults, and a call every fortnight</li>
+    </ul></div>
+    <div class="card reveal"><h3>What we won't do</h3><ul>
+      <li>Take on another dental practice within 7km of you</li>
+      <li>Use a specialist title for anyone who isn't registered for it</li>
+      <li>Promise results in ads, or run offers without clear terms</li>
+      <li>Report likes and clicks and call it a result</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="split">
+    <div class="sticky reveal"><p class="eyebrow">Straight answers</p><h2 style="margin-top:18px">Questions orthodontists ask about marketing.</h2></div>
+    <div class="reveal">{ORTHO_FAQ}</div>
+  </div>
+</div></section>
+{author_section(R)}
+{cta("Empty chairs give us anxiety. Genuinely.", "If people are enquiring about braces and aligners but not booking consults, call us. Twenty minutes, no pitch, just a look at where they're dropping off and what we'd do about it.", R=R)}
+"""
+
+add(slug="orthodontist-marketing.html",
+    title="Orthodontist Marketing Australia | Orthodontic Marketing Agency | GYA",
+    desc="Marketing for orthodontists: your credentials first, pages and ads for braces and clear aligners, social video, and follow-up until patients book a consult.",
+    crumbs=[("Home", "index.html"), ("Dental marketing", "dental-marketing.html"), ("Orthodontist marketing", "orthodontist-marketing.html")],
+    nav="dental-marketing.html",
+    schema=[{"@type": "Service", "name": "Orthodontist marketing", "provider": ORG, "serviceType": "Orthodontist marketing, orthodontic marketing agency", "areaServed": "AU"}, ORTHO_FAQ_S],
+    body=orthodontist_marketing_body)
